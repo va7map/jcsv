@@ -4,7 +4,6 @@
 
 Consider you have the following CSV file:
 {{{
-#firstname;lastname;age
 Holger;Schmidt;35
 Heinz;Bach;47
 Max;Mustermann;17
