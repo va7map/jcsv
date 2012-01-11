@@ -22,7 +22,7 @@ An example code might look like this:
 {{{
 Reader reader = new FileReader("persons.csv");
 
-CSVReader<String[]> csvPersonReader = CSVParser.newDefaultReader(reader);
+CSVReader<String[]> csvPersonReader = CSVReader.newDefaultReader(reader);
 List<String[]> persons = csvPersonReader.readAll();
 }}}
 You see, it's quite easy to read a CSV file and use the data in your program.
