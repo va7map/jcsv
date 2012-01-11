@@ -37,7 +37,7 @@ public class CSVReader<E> implements Iterable<E> {
 
 	/**
 	 * Reads the complete csv file and returns a List of created objects.
-	 * Call readNext() multiple times until null is returned.
+	 * Calls readNext() multiple times until null is returned.
 	 *
 	 * @return List of E
 	 * @throws IOException

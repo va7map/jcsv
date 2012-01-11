@@ -6,6 +6,7 @@ import java.util.List;
 
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.CSVUtil;
+import de.eikeb.jcsv.defaults.DefaultCSVEntryConverter;
 
 public class CSVWriter<E> {
 
@@ -19,27 +20,55 @@ public class CSVWriter<E> {
 		this.entryConverter = builder.entryConverter;
 	}
 
+	/**
+	 * Returns a default configured CSVWriter<String[]>.
+	 * It uses the DefaultCSVEntryParser that allows you to
+	 * write a String[] arrayas an entry in your csv file.
+	 *
+	 * @param writer the character output stream
+	 * @return the CSVWriter
+	 */
+	public static CSVWriter<String[]> newDefaultWriter(Writer writer) {
+		return new Builder<String[]>(writer).entryConverter(new DefaultCSVEntryConverter()).build();
+	}
+
 
 	/**
 	 * Writes the data into the specified character output stream.
+	 * Calls write(E e) multiple times to write each entry.
 	 *
 	 * @param data List of Es
 	 * @throws IOException
 	 */
 	public void writeAll(List<E> data) throws IOException {
 		for (E e : data) {
-			StringBuilder sb = new StringBuilder();
-
-			String[] columns = entryConverter.convertEntry(e);
-			String line = CSVUtil.implode(columns, String.valueOf(strategy.getDelimiter()));
-
-			sb.append(line);
-			sb.append(System.getProperty("line.separator"));
-
-			writer.append(sb.toString());
+			write(e);
 		}
 	}
 
+	/**
+	 * Writes an entry E to the specified character output stream.
+	 *
+	 * @param e the entry, that should be written
+	 * @throws IOException
+	 */
+	public void write(E e) throws IOException {
+		StringBuilder sb = new StringBuilder();
+
+		String[] columns = entryConverter.convertEntry(e);
+		String line = CSVUtil.implode(columns, String.valueOf(strategy.getDelimiter()));
+
+		sb.append(line);
+		sb.append(System.getProperty("line.separator"));
+
+		writer.append(sb.toString());
+	}
+
+	/**
+	 * The builder that creates the CSVWriter instance.
+	 *
+	 * @param <E> The Type that your rows represent
+	 */
 	public static class Builder<E> {
 		private final Writer writer;
 		private CSVStrategy strategy = CSVStrategy.DEFAULT;
@@ -75,6 +104,11 @@ public class CSVWriter<E> {
 			return this;
 		}
 
+		/**
+		 * Builds the CSVWriter, using the specified configuration
+		 *
+		 * @return the CSVWriter instance
+		 */
 		public CSVWriter<E> build() {
 			if (entryConverter == null) {
 				throw new IllegalStateException("you have to specify an entry converter");
