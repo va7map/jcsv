@@ -70,9 +70,9 @@ public class PersonEntryParser implements CSVEntryParser<Person> {
 
 Once we have written this entry parser, we can us the CSVParser.Builder to provide our CSVEntryParser implementation:
 {{{
-FileReader csvReader = new FileReader("persons.csv");
+Reader reader = new FileReader("persons.csv");
 
-CSVParser<Person> csvPersonParser = new CSVParser.Builder<Person>(csvReader).entryParser(new PersonEntryParser()).build();
+CSVParser<Person> csvPersonParser = new CSVParser.Builder<Person>(reader).entryParser(new PersonEntryParser()).build();
 List<Person> persons = csvPersonParser.parse();
 }}}
 
