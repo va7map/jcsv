@@ -1,6 +1,6 @@
 #summary A simple example that shows how to map CSV entries to java objects
 
-= Introduction =
+== Introduction ==
 
 Consider you have the following CSV file:
 {{{
@@ -9,48 +9,53 @@ Heinz;Bach;47
 Max;Mustermann;17
 Lisa;Stein;19
 }}}
+Each line represents a person. Each person has a first name, a last name and an age. Nothing special... 
 
-Each line represents a person. Furthermore we have a corresponding Person class that may look like this:
+It is very easy to parse this csv file using jCSV. It comes with a fully configured CSVParser that does (mostly) all of the work.
+
+== Parse the data as a String[] array ==
+A straightforward approach would be to read the file line by line. Each line would be split at ';', so we would receive an String[] array containing the three data parts.
+
+The default CSVParser configuration follows this approach, we can obtain this parser using the static factory method `CSVParser.newDefaultParser(Reader reader)`.
+
+An example code might look like this:
+{{{
+Reader reader = new FileReader("persons.csv");
+
+CSVParser<String[]> csvPersonParser = CSVParser.newDefaultParser(reader);
+List<String[]> persons = csvPersonParser.parse();
+}}}
+You see, it's quite easy to read a CSV file and use the data in your program.
+
+However, using a List of String[] arrays is not very handy ;)
+
+= Create Java objects =
+
+It would be a lot easier to use a List of Persons in our program. jCSV supports to convert each row into a java object.
+
+The corrensponding Person class may look like this:
 {{{
 public class Person {
-	private final String firstname;
-	private final String lastname;
-	private final int age;
+        // ... variable declarations
 
 	public Person(String firstname, String lastname, int age) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.age = age;
 	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("%s %s %s", firstname, lastname, age);
-	}
+       
+        // ... getter, equals, toString
 }
 }}}
 
-= Parse the CSV file =
-
-It is very easy to parse the CSV file above and create a List of Person objects. All you have to do, is to tell the CSVParser how to convert a row into a Person. For this purpose exists an interface called CSVEntryParser:
+All we have to do is to tell jCSV how to convert a row from the csv file into a Person object. For this purpose exists an interface called CSVEntryParser:
 {{{
 public interface CSVEntryParser<E> {
 	public E parseEntry(String... data);
 }
 }}}
-The method `parseEntry` converts a String[] array to an object of the class E, E will be Person in our example. So all we have to do, is to provide a CSVEntryParser, a straight forward implementation might look like this:
+
+The method `parseEntry` converts a String[] array to an object of the class E, E will be Person in our example. So all we have to do, is to provide an appropiate CSVEntryParser, a straightforward implementation might look like this:
 {{{
 public class PersonEntryParser implements CSVEntryParser<Person> {
 	public Person parseEntry(String... data) {
@@ -63,13 +68,13 @@ public class PersonEntryParser implements CSVEntryParser<Person> {
 }
 }}}
 
-Once we have written this entry parser, we can parse our csv file:
+Once we have written this entry parser, we can us the CSVParser.Builder to provide our CSVEntryParser implementation:
 {{{
-FileReader csvReader = new FileReader("myfile.csv");
+FileReader csvReader = new FileReader("persons.csv");
 
 CSVParser<Person> csvPersonParser = new CSVParser.Builder<Person>(csvReader).entryParser(new PersonEntryParser()).build();
 
 List<Person> persons = csvPersonParser.parse();
 }}}
 
-That's it.
+That's it. :)
