@@ -1,6 +1,7 @@
 package de.eikeb.jcsv.reader;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.defaults.DefaultCSVEntryParser;
 
-public class CSVReader<E> implements Iterable<E> {
+public class CSVReader<E> implements Iterable<E>, Closeable {
 	private final BufferedReader reader;
 	private final CSVStrategy strategy;
 	private final CSVEntryParser<E> entryParser;
@@ -82,9 +83,22 @@ public class CSVReader<E> implements Iterable<E> {
 		return entry;
 	}
 
+	/**
+	 * Returns the Iterator for this CSVReader.
+	 *
+	 * @return Iterator<E> the iterator
+	 */
 	@Override
 	public Iterator<E> iterator() {
 		return new CSVIterator();
+	}
+
+	/**
+	 * {@link java.io.Closeable#close()}
+	 */
+	@Override
+	public void close() throws IOException {
+		reader.close();
 	}
 
 	private boolean isCommentLine(String line) {

@@ -1,5 +1,6 @@
 package de.eikeb.jcsv.writer;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
@@ -8,7 +9,7 @@ import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.CSVUtil;
 import de.eikeb.jcsv.defaults.DefaultCSVEntryConverter;
 
-public class CSVWriter<E> {
+public class CSVWriter<E> implements Closeable {
 
 	private final Writer writer;
 	private final CSVStrategy strategy;
@@ -62,6 +63,11 @@ public class CSVWriter<E> {
 		sb.append(System.getProperty("line.separator"));
 
 		writer.append(sb.toString());
+	}
+
+	@Override
+	public void close() throws IOException {
+		writer.close();
 	}
 
 	/**
