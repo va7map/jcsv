@@ -1,6 +1,6 @@
 #summary A simple example that shows how to map CSV entries to java objects
 
-== Introduction ==
+= Introduction =
 
 Consider you have the following CSV file:
 {{{
@@ -29,7 +29,7 @@ You see, it's quite easy to read a CSV file and use the data in your program.
 
 However, using a List of String[] arrays is not very handy ;)
 
-= Create Java objects =
+== Create Java objects ==
 
 It would be a lot easier to use a List of Persons in our program. jCSV supports to convert each row into a java object.
 
