@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.parser;
+package de.eikeb.jcsv.reader;
 
 /**
  * The CSVEntryParser receives a line of the csv file and converts it
