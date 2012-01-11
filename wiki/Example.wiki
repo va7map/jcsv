@@ -11,19 +11,19 @@ Lisa;Stein;19
 }}}
 Each line represents a person. Each person has a first name, a last name and an age. Nothing special... 
 
-It is very easy to parse this csv file using jCSV. It comes with a fully configured CSVParser that does (mostly) all of the work.
+It is very easy to parse this csv file using jCSV. It comes with a fully configured CSVReader that does (mostly) all of the work.
 
 == Parse the data as a String[] array ==
 A straightforward approach would be to read the file line by line. Each line would be split at ';', so we would receive an String[] array containing the three data parts.
 
-The default CSVParser configuration follows this approach, we can obtain this parser using the static factory method `CSVParser.newDefaultParser(Reader reader)`.
+The default CSVParser configuration follows this approach, we can obtain this parser using the static factory method `CSVReader.newDefaultReader(Reader reader)`.
 
 An example code might look like this:
 {{{
 Reader reader = new FileReader("persons.csv");
 
-CSVParser<String[]> csvPersonParser = CSVParser.newDefaultParser(reader);
-List<String[]> persons = csvPersonParser.parse();
+CSVReader<String[]> csvPersonReader = CSVParser.newDefaultReader(reader);
+List<String[]> persons = csvPersonReader.readAll();
 }}}
 You see, it's quite easy to read a CSV file and use the data in your program.
 
@@ -72,8 +72,8 @@ Once we have written this entry parser, we can us the CSVParser.Builder to provi
 {{{
 Reader reader = new FileReader("persons.csv");
 
-CSVParser<Person> csvPersonParser = new CSVParser.Builder<Person>(reader).entryParser(new PersonEntryParser()).build();
-List<Person> persons = csvPersonParser.parse();
+CSVReader<Person> csvPersonReader = new CSVReader.Builder<Person>(reader).entryParser(new PersonEntryParser()).build();
+List<Person> persons = csvPersonReader.readAll();
 }}}
 
 That's it. :)
