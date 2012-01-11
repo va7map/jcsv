@@ -1,5 +1,7 @@
 package de.eikeb.jcsv;
 
+import java.util.regex.Pattern;
+
 public class CSVStrategy {
 
 	/**
@@ -19,6 +21,7 @@ public class CSVStrategy {
 	public static final CSVStrategy UK_DEFAULT = new CSVStrategy(',',  '#', false);
 
 	private final char delimiter;
+	private final String delimiterPattern;
 	private final char commentStart;
 	private final boolean skipHeader;
 
@@ -30,6 +33,7 @@ public class CSVStrategy {
 	 */
 	public CSVStrategy(char delimiter, char commentStart, boolean skipHeader) {
 		this.delimiter = delimiter;
+		this.delimiterPattern = Pattern.quote(String.valueOf(delimiter));
 		this.commentStart = commentStart;
 		this.skipHeader = skipHeader;
 	}
@@ -45,4 +49,9 @@ public class CSVStrategy {
 	public boolean isSkipHeader() {
 		return skipHeader;
 	}
+
+	public String getDelimiterPattern() {
+		return delimiterPattern;
+	}
+
 }

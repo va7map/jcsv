@@ -1,6 +1,6 @@
 package de.eikeb.jcsv.defaults;
 
-import de.eikeb.jcsv.parser.CSVEntryParser;
+import de.eikeb.jcsv.reader.CSVEntryParser;
 
 /**
  * A default implementation of the CSVEntryParser.
