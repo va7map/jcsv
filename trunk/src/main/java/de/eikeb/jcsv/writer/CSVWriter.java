@@ -6,19 +6,21 @@ import java.io.Writer;
 import java.util.List;
 
 import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.CSVUtil;
 import de.eikeb.jcsv.defaults.DefaultCSVEntryConverter;
+import de.eikeb.jcsv.writer.internal.CSVColumnJoinerImpl;
 
 public class CSVWriter<E> implements Closeable {
 
 	private final Writer writer;
 	private final CSVStrategy strategy;
 	private final CSVEntryConverter<E> entryConverter;
+	private final CSVColumnJoiner columnJoiner;
 
 	private CSVWriter(Builder<E> builder) {
 		this.writer = builder.writer;
 		this.strategy = builder.strategy;
 		this.entryConverter = builder.entryConverter;
+		this.columnJoiner = builder.columnJoiner;
 	}
 
 	/**
@@ -57,7 +59,7 @@ public class CSVWriter<E> implements Closeable {
 		StringBuilder sb = new StringBuilder();
 
 		String[] columns = entryConverter.convertEntry(e);
-		String line = CSVUtil.implode(columns, String.valueOf(strategy.getDelimiter()));
+		String line = columnJoiner.joinColumns(columns, strategy);
 
 		sb.append(line);
 		sb.append(System.getProperty("line.separator"));
@@ -79,8 +81,10 @@ public class CSVWriter<E> implements Closeable {
 		private final Writer writer;
 		private CSVStrategy strategy = CSVStrategy.DEFAULT;
 		private CSVEntryConverter<E> entryConverter;
+		private CSVColumnJoiner columnJoiner = new CSVColumnJoinerImpl();
 
 		/**
+		 * Creates a Builder for the CSVWriter
 		 *
 		 * @param writer the character output stream
 		 */
@@ -107,6 +111,20 @@ public class CSVWriter<E> implements Closeable {
 		 */
 		public Builder<E> entryConverter(CSVEntryConverter<E> entryConverter) {
 			this.entryConverter = entryConverter;
+			return this;
+		}
+
+		/**
+		 * Sets the column joiner strategy that the CSVWriter will use.
+		 * If you don't specify your own csv tokenizer strategy, the default
+		 * column joiner will be used.
+		 * {@link de.eikeb.jcsv.writer.internal.CSVColumnJoinerImpl}
+		 *
+		 * @param columnJoiner the column joiner
+		 * @return this builder
+		 */
+		public Builder<E> columnJoiner(CSVColumnJoiner columnJoiner) {
+			this.columnJoiner = columnJoiner;
 			return this;
 		}
 
