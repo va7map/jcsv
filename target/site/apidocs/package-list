@@ -1,4 +1,6 @@
 de.eikeb.jcsv
 de.eikeb.jcsv.defaults
 de.eikeb.jcsv.reader
+de.eikeb.jcsv.reader.internal
 de.eikeb.jcsv.writer
+de.eikeb.jcsv.writer.internal

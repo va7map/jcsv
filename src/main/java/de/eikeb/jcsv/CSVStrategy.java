@@ -1,57 +1,85 @@
 package de.eikeb.jcsv;
 
-import java.util.regex.Pattern;
-
 public class CSVStrategy {
 
 	/**
 	 * The default CSV strategy.
-	 * - delimiter is a ;
-	 * - comments start with an #
-	 * - will not skip the header line
+	 * - delimiter ;
+	 * - quote character "
+	 * - comment indicator #
+	 * - do not skip header
+	 * - ignore empty lines
 	 */
-	public static final CSVStrategy DEFAULT = new CSVStrategy(';', '#', false);
+	public static final CSVStrategy DEFAULT = new CSVStrategy(';', '"', '#', false, true);
 
 	/**
 	 * The USA/UK csv standard.
-	 * - delimiter is a ,
-	 * - comments start with an #
-	 * - will not skip the header line
+	 * - delimiter ,
+	 * - quote character "
+	 * - comment indicator #
+	 * - do not skip header
+	 * - ignore empty lines
 	 */
-	public static final CSVStrategy UK_DEFAULT = new CSVStrategy(',',  '#', false);
+	public static final CSVStrategy UK_DEFAULT = new CSVStrategy(',', '"', '#', false, true);
 
 	private final char delimiter;
-	private final String delimiterPattern;
-	private final char commentStart;
+	private final char quoteCharacter;
+	private final char commentIndicator;
 	private final boolean skipHeader;
+	private final boolean ignoreEmptyLines;
 
 	/**
-	 * Creates a csv strategy, using the given parameters
-	 * @param delimiter the token delimiter char
-	 * @param commentStart the comment indicator
-	 * @param skipHeader if true, skips the first line
+	 * Creates a CSVStrategy.
+	 *
+	 * @param delimiter
+	 * @param quoteCharacter
+	 * @param commentIndicator
+	 * @param skipHeader
+	 * @param ignoreEmptyLines
 	 */
-	public CSVStrategy(char delimiter, char commentStart, boolean skipHeader) {
+	public CSVStrategy(char delimiter, char quoteCharacter, char commentIndicator, boolean skipHeader,
+			boolean ignoreEmptyLines) {
 		this.delimiter = delimiter;
-		this.delimiterPattern = Pattern.quote(String.valueOf(delimiter));
-		this.commentStart = commentStart;
+		this.quoteCharacter = quoteCharacter;
+		this.commentIndicator = commentIndicator;
 		this.skipHeader = skipHeader;
+		this.ignoreEmptyLines = ignoreEmptyLines;
 	}
 
+	/**
+	 * Returns the delimiter character.
+	 */
 	public char getDelimiter() {
 		return delimiter;
 	}
 
-	public char getCommentStart() {
-		return commentStart;
+	/**
+	 * Returns the quote character.
+	 */
+	public char getQuoteCharacter() {
+		return quoteCharacter;
 	}
 
+	/**
+	 * Returns the comment indicator.
+	 */
+	public char getCommentIndicator() {
+		return commentIndicator;
+	}
+
+	/**
+	 * Skip the header?
+	 * @return true, if the csv header should be skipped.
+	 */
 	public boolean isSkipHeader() {
 		return skipHeader;
 	}
 
-	public String getDelimiterPattern() {
-		return delimiterPattern;
+	/**
+	 * Ignore empty lines?
+	 * @return true, if empty lines should be ignored.
+	 */
+	public boolean isIgnoreEmptyLines() {
+		return ignoreEmptyLines;
 	}
-
 }
