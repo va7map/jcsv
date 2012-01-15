@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.defaults.DefaultCSVEntryParser;
+import de.eikeb.jcsv.internal.DefaultCSVEntryParser;
 import de.eikeb.jcsv.reader.internal.CSVTokenizerImpl;
 
 public class CSVReader<E> implements Iterable<E>, Closeable {

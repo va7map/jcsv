@@ -6,7 +6,7 @@ import java.io.Writer;
 import java.util.List;
 
 import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.defaults.DefaultCSVEntryConverter;
+import de.eikeb.jcsv.internal.DefaultCSVEntryConverter;
 import de.eikeb.jcsv.writer.internal.CSVColumnJoinerImpl;
 
 public class CSVWriter<E> implements Closeable {

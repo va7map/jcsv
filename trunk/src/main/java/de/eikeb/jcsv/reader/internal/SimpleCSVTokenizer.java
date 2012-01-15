@@ -2,9 +2,11 @@ package de.eikeb.jcsv.reader.internal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
 
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.reader.CSVTokenizer;
@@ -23,6 +25,12 @@ public class SimpleCSVTokenizer implements CSVTokenizer {
 	 */
 	@Override
 	public List<String> tokenizeLine(String line, CSVStrategy strategy, BufferedReader reader) throws IOException {
-		return Arrays.asList(line.split(Pattern.quote(String.valueOf(strategy.getDelimiter()))));
+		if (line.equals("")) {
+			return new ArrayList<String>();
+		}
+
+		List<String> tokens = Arrays.asList(StringUtils.splitPreserveAllTokens(line, strategy.getDelimiter()));
+
+		return tokens;
 	}
 }
