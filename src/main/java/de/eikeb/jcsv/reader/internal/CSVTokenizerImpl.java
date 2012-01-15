@@ -46,7 +46,9 @@ public class CSVTokenizerImpl implements CSVTokenizer {
 						token.add(sb.toString());
 						sb.delete(0, sb.length());
 					} else if (c == NEW_LINE) {
-						token.add(sb.toString());
+						if (!(token.size() == 0 && sb.length() == 0)) {
+							token.add(sb.toString());
+						}
 						return token;
 					} else if (c == QUOTE) {
 						if (sb.length() == 0) {

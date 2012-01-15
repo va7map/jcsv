@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.defaults;
+package de.eikeb.jcsv.internal;
 
 import de.eikeb.jcsv.reader.CSVEntryParser;
 
@@ -11,6 +11,7 @@ public class DefaultCSVEntryParser implements CSVEntryParser<String[]> {
 	/**
 	 * returns the input...
 	 */
+	@Override
 	public String[] parseEntry(String... data) {
 		return data;
 	}

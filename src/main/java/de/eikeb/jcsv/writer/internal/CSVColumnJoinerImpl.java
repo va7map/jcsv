@@ -27,10 +27,9 @@ public class CSVColumnJoinerImpl implements CSVColumnJoiner {
 		// check each column for delimiter or quote characters
 		// and escape them if neccessary
 		for (int i = 0; i < data.length; i++) {
-			if (data[i].contains(delimiter)) {
+			if (data[i].contains(delimiter) || data[i].contains(quote)) {
 				if (data[i].contains(quote)) {
 					data[i] = data[i].replaceAll(Pattern.quote(quote), doubleQuote);
-					System.out.println(data[i]);
 				}
 
 				data[i] = quote + data[i] + quote;
