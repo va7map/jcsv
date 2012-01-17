@@ -11,6 +11,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.eikeb.jcsv.CSVStrategy;
+
 public class CSVReaderTest extends TestCase {
 
 	private static final String NEW_LINE = System.getProperty("line.separator");
@@ -20,11 +22,13 @@ public class CSVReaderTest extends TestCase {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		String input = "Hans;\"im \"\"Glück\"\"\";16" + NEW_LINE
+		String input = "Vorname;Nachname;Alter" + NEW_LINE
+				+ "Hans;\"im \"\"Glück\"\"\";16" + NEW_LINE
 				+ "Klaus;Meyer;33" + NEW_LINE;
 		StringReader sr = new StringReader(input);
 
-		csvReader = new CSVReader.Builder<Person>(sr).entryParser(new PersonEntyParser()).build();
+		CSVStrategy strategy = new CSVStrategy(';', '"', '#', true, true);
+		csvReader = new CSVReader.Builder<Person>(sr).entryParser(new PersonEntyParser()).strategy(strategy).build();
 	}
 
 	@Override
@@ -54,6 +58,19 @@ public class CSVReaderTest extends TestCase {
 		result = csvReader.readNext();
 		expected = new Person("Klaus", "Meyer", 33);
 		assertEquals(expected, result);
+	}
+
+	@SuppressWarnings("serial")
+	@Test(expected = IllegalStateException.class)
+	public void testReadHeader() throws IOException {
+		List<String> result = csvReader.readHeader();
+		List<String> expected = new ArrayList<String>() {{
+			add("Vorname"); add("Nachname"); add("Alter");
+		}};
+		assertEquals(expected, result);
+
+		// the second call must fail
+		csvReader.readHeader();
 	}
 
 	private static class PersonEntyParser implements CSVEntryParser<Person> {

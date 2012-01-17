@@ -13,14 +13,15 @@ import de.eikeb.jcsv.internal.DefaultCSVEntryParser;
 import de.eikeb.jcsv.reader.internal.CSVTokenizerImpl;
 
 public class CSVReader<E> implements Iterable<E>, Closeable {
+	private static final String[] DUMMY_STRING_ARRAY = new String[0];
+
 	private final BufferedReader reader;
 	private final CSVStrategy strategy;
 	private final CSVEntryParser<E> entryParser;
 	private final CSVEntryFilter<E> entryFilter;
 	private final CSVTokenizer tokenizer;
 
-	private boolean headerSkipped = false;
-	private final String[] DUMMY_STRING_ARRAY = new String[0];
+	private boolean firstLineRead = false;
 
 	private CSVReader(Builder<E> builder) {
 		this.reader = new BufferedReader(builder.reader);
@@ -67,9 +68,8 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 	 * @throws IOException
 	 */
 	public E readNext() throws IOException {
-		if (strategy.isSkipHeader() && !headerSkipped) {
+		if (strategy.isSkipHeader() && !firstLineRead) {
 			reader.readLine();
-			headerSkipped = true;
 		}
 
 		E entry = null;
@@ -94,11 +94,32 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 			validEntry = entryFilter != null ? entryFilter.match(entry) : true;
 		} while (!validEntry);
 
+		firstLineRead = true;
+
 		return entry;
 	}
 
 
+	/**
+	 * Reads and returns the header of the csv file.
+	 * This method must be the first call on this CSVReader.
+	 *
+	 * @return The csv header
+	 * @throws IOException
+	 */
+	public List<String> readHeader() throws IOException {
+		if (firstLineRead) {
+			throw new IllegalStateException("can not read header, readHeader() must be the first call on this reader");
+		}
 
+		String line = reader.readLine();
+		if (line == null) {
+			throw new IllegalStateException("reached EOF while reading the header");
+		}
+
+		List<String> header = tokenizer.tokenizeLine(line, strategy, reader);
+		return header;
+	}
 
 	/**
 	 * Returns the Iterator for this CSVReader.
