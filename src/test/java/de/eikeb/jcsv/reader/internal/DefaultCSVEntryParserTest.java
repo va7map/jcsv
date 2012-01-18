@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.internal;
+package de.eikeb.jcsv.reader.internal;
 
 import static org.junit.Assert.assertArrayEquals;
 
