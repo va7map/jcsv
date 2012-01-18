@@ -9,8 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.internal.DefaultCSVEntryParser;
 import de.eikeb.jcsv.reader.internal.CSVTokenizerImpl;
+import de.eikeb.jcsv.reader.internal.DefaultCSVEntryParser;
 
 public class CSVReader<E> implements Iterable<E>, Closeable {
 	private static final String[] DUMMY_STRING_ARRAY = new String[0];

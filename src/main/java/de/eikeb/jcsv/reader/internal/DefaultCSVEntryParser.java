@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.internal;
+package de.eikeb.jcsv.reader.internal;
 
 import de.eikeb.jcsv.reader.CSVEntryParser;
 

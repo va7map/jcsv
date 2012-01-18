@@ -5,7 +5,7 @@ package de.eikeb.jcsv.reader;
  * to a java object.
  *
  * The default implementation of this interface is
- * {@link de.eikeb.jcsv.defaults.DefaultCSVEntryParser}
+ * {@link de.eikeb.jcsv.reader.internal.DefaultCSVEntryParser}
  * That implementation just returns the String[] array without any conversion.
  *
  * @param <E> The Type that the entry parser creates
