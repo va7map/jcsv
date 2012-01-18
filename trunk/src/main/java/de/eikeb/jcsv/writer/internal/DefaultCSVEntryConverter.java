@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.internal;
+package de.eikeb.jcsv.writer.internal;
 
 import de.eikeb.jcsv.writer.CSVEntryConverter;
 
