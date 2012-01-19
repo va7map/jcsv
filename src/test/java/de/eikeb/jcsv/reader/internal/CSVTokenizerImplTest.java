@@ -1,19 +1,19 @@
 package de.eikeb.jcsv.reader.internal;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.reader.CSVTokenizer;
 
-public class CSVTokenizerImplTest extends TestCase{
+public class CSVTokenizerImplTest {
 
 	@Test
 	@SuppressWarnings("serial")
@@ -60,7 +60,6 @@ public class CSVTokenizerImplTest extends TestCase{
 		line = "";
 		token = tokenizer.tokenizeLine(line, strategy, null);
 		expected = new ArrayList<String>();
-		System.out.println(token.size());
 		assertEquals(expected, token);
 
 		// more complex test cases

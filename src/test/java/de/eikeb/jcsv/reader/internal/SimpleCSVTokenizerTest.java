@@ -1,17 +1,17 @@
 package de.eikeb.jcsv.reader.internal;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import junit.framework.TestCase;
 
 import org.junit.Test;
 
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.reader.CSVTokenizer;
 
-public class SimpleCSVTokenizerTest extends TestCase {
+public class SimpleCSVTokenizerTest {
 
 	@Test
 	@SuppressWarnings("serial")

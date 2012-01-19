@@ -1,10 +1,9 @@
 package de.eikeb.jcsv;
-
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class CSVUtilTest extends TestCase {
+public class CSVUtilTest {
 
 	@Test
 	public void testImplode() {

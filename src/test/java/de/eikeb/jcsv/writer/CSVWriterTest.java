@@ -42,7 +42,6 @@ public class CSVWriterTest extends TestCase {
 		String result = stringWriter.toString();
 		String expected = "Hans;\"im \"\"Glück\"\"\";16" + NEW_LINE
 				+ "Klaus;Meyer;33" + NEW_LINE;
-		System.out.println(result);
 		assertEquals(expected, result);
 
 	}
