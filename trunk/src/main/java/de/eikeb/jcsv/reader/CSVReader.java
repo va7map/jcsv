@@ -13,8 +13,6 @@ import de.eikeb.jcsv.reader.internal.CSVTokenizerImpl;
 import de.eikeb.jcsv.reader.internal.DefaultCSVEntryParser;
 
 public class CSVReader<E> implements Iterable<E>, Closeable {
-	private static final String[] DUMMY_STRING_ARRAY = new String[0];
-
 	private final BufferedReader reader;
 	private final CSVStrategy strategy;
 	private final CSVEntryParser<E> entryParser;
@@ -75,7 +73,7 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 		E entry = null;
 		boolean validEntry = false;
 		do {
-			String line = reader.readLine();
+			String line = readLine();
 			if (line == null) {
 				return null;
 			}
@@ -89,7 +87,7 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 			}
 
 			List<String> data = tokenizer.tokenizeLine(line, strategy, reader);
-			entry = entryParser.parseEntry(data.toArray(DUMMY_STRING_ARRAY));
+			entry = entryParser.parseEntry(data.toArray(new String[data.size()]));
 
 			validEntry = entryFilter != null ? entryFilter.match(entry) : true;
 		} while (!validEntry);
@@ -112,7 +110,7 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 			throw new IllegalStateException("can not read header, readHeader() must be the first call on this reader");
 		}
 
-		String line = reader.readLine();
+		String line = readLine();
 		if (line == null) {
 			throw new IllegalStateException("reached EOF while reading the header");
 		}
@@ -141,6 +139,18 @@ public class CSVReader<E> implements Iterable<E>, Closeable {
 
 	private boolean isCommentLine(String line) {
 		return line.startsWith(String.valueOf(strategy.getCommentIndicator()));
+	}
+
+	/**
+	 * Reads a line from the given reader and sets the firstLineRead flag.
+	 *
+	 * @return the read line
+	 * @throws IOException
+	 */
+	private String readLine() throws IOException {
+		String line = reader.readLine();
+		firstLineRead = true;
+		return line;
 	}
 
 	private class CSVIterator implements Iterator<E> {
