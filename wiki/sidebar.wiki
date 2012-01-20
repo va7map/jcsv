@@ -1,8 +1,8 @@
   * [Welcome Welcome]
   * [Install Install jCSV]
   * Examples
-    * [readCSV Read a CSV file]
-    * [writeCSV Write a CSV file]
-    * [CSVEntryParser The CSVEntryParser]
+    * [CSVReader Read a CSV file]
+    * [CSVWriter Write a CSV file]
+    * [CSVEntryFilter The CSVEntryFilter]
     * [CSVStrategy Specify the csv format]
   * [Roadmap Roadmap]
