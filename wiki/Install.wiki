@@ -2,7 +2,7 @@
 
 = Install jCSV =
 
-All you need to do, is to include the latest version of jCSV to you classpath. The latest stable version is 1.0.1, that can be downloaded in the [http://code.google.com/p/jcsv/downloads/list download area]
+All you need to do is to include the latest version of jCSV to you classpath. The latest stable version is 1.0.1, that can be downloaded in the [http://code.google.com/p/jcsv/downloads/list download area]
 
-= Maven Repository =
+=== Maven Repository ===
 jCSV will be available in the maven repos :)
