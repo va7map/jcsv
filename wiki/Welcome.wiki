@@ -1,0 +1,18 @@
+#summary Welcome to jCSV
+
+= Welcome =
+
+jCSV is a fast and very easy to use csv library for Java. With just a few lines of Code you can parse any csv file.
+jCSV also provides mechanisms to bind the csv file directly to java objects. See the Wiki for some working examples.
+
+jCSV fully supports the csv standard that is described in: [http://en.wikipedia.org/wiki/Comma-separated_values Comma-separated values - Wikipedia]
+
+More features:
+  * entry filter, see
+  * fully configurable format, see
+  * cached csv files, see
+  * write csv files, see
+
+
+=== Questions? ===
+If you have questions concerning jCSV, please feel free to write me an email: skironnet@gmail.com
