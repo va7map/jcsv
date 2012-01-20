@@ -10,7 +10,7 @@ jCSV fully supports the csv standard that is described in: [http://en.wikipedia.
 More features:
   * entry filter, see
   * fully configurable format, see
-  * cached csv files, see
+  * cached csv reader, see
   * write csv files, see
 
 
