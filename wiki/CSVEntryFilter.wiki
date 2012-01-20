@@ -25,5 +25,7 @@ public class ChildrenFilter implements CSVEntryFilter<Person> {
 }}}
 This filter can applied like this:
 {{{
-CSVReader<Person> csvPersonReader = new CSVReader.Builder<Person>(fileReader).entryFilter(new ChildrenFilter())...
+CSVReader<Person> csvPersonReader = new CSVReaderBuilder<Person>(fileReader).entryFilter(new ChildrenFilter())...
 }}}
+If you call the readNext() method, the CSVReader will read entries as long as an entry has been found that matches the applied filter.
+The readAll() Method also uses the applied filter, you will receive a list of all records that matches the filter.
