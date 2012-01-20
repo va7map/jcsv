@@ -3,7 +3,7 @@ package de.eikeb.jcsv.writer.internal;
 import java.util.regex.Pattern;
 
 import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.CSVUtil;
+import de.eikeb.jcsv.util.CSVUtil;
 import de.eikeb.jcsv.writer.CSVColumnJoiner;
 
 /**

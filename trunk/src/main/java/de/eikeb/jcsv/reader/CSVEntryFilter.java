@@ -1,5 +1,11 @@
 package de.eikeb.jcsv.reader;
 
+/**
+ * The CSVEntryFilter is used to filter the records of a
+ * csv file.
+ *
+ * @param <E> the type of the records
+ */
 public interface CSVEntryFilter<E> {
 
 	/**
