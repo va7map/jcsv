@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.writer;
+package de.eikeb.jcsv.writer.internal;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -11,7 +11,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CSVWriterTest extends TestCase {
+import de.eikeb.jcsv.writer.CSVEntryConverter;
+import de.eikeb.jcsv.writer.CSVWriter;
+
+public class CSVWriterImplTest extends TestCase {
 
 	private static final String NEW_LINE = System.getProperty("line.separator");
 
@@ -22,7 +25,7 @@ public class CSVWriterTest extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		// build a new csvWriter that can write person objects
-		csvWriter = new CSVWriter.Builder<Person>(stringWriter).entryConverter(new PersonEntryConverter()).build();
+		csvWriter = new CSVWriterBuilder<Person>(stringWriter).entryConverter(new PersonEntryConverter()).build();
 	}
 
 	@Override

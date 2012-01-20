@@ -8,11 +8,11 @@ import de.eikeb.jcsv.CSVStrategy;
 
 
 /**
- * The CSVTokenizer specifies the behaviour how the CSVReader parses each line into a List of Strings.
+ * The CSVTokenizer specifies the behaviour how the CSVReaderImpl parses each line into a List of Strings.
  */
 public interface CSVTokenizer {
 	/**
-	 * Splits the line into tokens, using the CSVStrategy, passed by the CSVReader.
+	 * Splits the line into tokens, using the CSVStrategy, passed by the CSVReaderImpl.
 	 *
 	 * @param line the current line
 	 * @param reader the reader may be used to read further lines if the line ends with an open quotation

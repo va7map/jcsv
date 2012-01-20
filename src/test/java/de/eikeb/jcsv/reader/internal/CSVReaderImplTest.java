@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader;
+package de.eikeb.jcsv.reader.internal;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,17 +13,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.eikeb.jcsv.CSVStrategy;
+import de.eikeb.jcsv.reader.CSVReader;
 import de.eikeb.jcsv.util.Person;
 import de.eikeb.jcsv.util.PersonEntryParser;
 
-public class CSVReaderTest {
+public class CSVReaderImplTest {
 	private CSVReader<Person> csvReader;
 
 	@Before
 	public void setUp() throws Exception {
 		Reader reader = new InputStreamReader(this.getClass().getResourceAsStream("/persons_quotes.csv"));
 		CSVStrategy strategy = new CSVStrategy(';', '"', '#', true, true);
-		csvReader = new CSVReader.Builder<Person>(reader).entryParser(new PersonEntryParser()).strategy(strategy).build();
+		csvReader = new CSVReaderBuilder<Person>(reader).entryParser(new PersonEntryParser()).strategy(strategy).build();
 	}
 
 	@After
