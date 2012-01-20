@@ -1,6 +1,6 @@
   * [Welcome Welcome]
   * [Install Install jCSV]
-  * [Examples Examples]
+  * Examples
     * [readCSV Read a CSV file]
     * [writeCSV Write a CSV file]
     * [CSVEntryParser The CSVEntryParser]
