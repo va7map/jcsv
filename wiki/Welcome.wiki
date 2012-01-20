@@ -15,4 +15,4 @@ More features:
 
 
 === Questions? ===
-If you have questions concerning jCSV, please feel free to write me an email: skironnet@gmail.com
+If you have questions concerning jCSV, please feel free to write me an email: skironnet (at) gmail (dot) com
