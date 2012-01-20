@@ -4,4 +4,5 @@
     * [readCSV Read a CSV file]
     * [writeCSV Write a CSV file]
     * [CSVEntryParser The CSVEntryParser]
+    * [CSVStrategy Specify the csv format]
   * [Roadmap Roadmap]
