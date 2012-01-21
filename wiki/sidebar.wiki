@@ -5,4 +5,5 @@
     * [CSVWriter Write a CSV file]
     * [CSVEntryFilter The CSVEntryFilter]
     * [CSVStrategy Specify the csv format]
+    * [CachedReader Cached Reader]
   * [Roadmap Roadmap]
