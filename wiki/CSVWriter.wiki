@@ -1,6 +1,6 @@
 #summary A simple examples how to write a csv file, using the CSVWriter.
 
-== Introduction ==
+= Introduction =
 Consider we would like to create a `persons.csv` file like the one from the CSVReader example.
 
 In our application, we have a list of persons:
@@ -11,17 +11,17 @@ persons.add(new Person("Max", "Mustermann", 17));
 persons.add(new Person("Lisa", "Stein", 19));
 }}}
 
-You can write this data to a csv file using the CSVWriter.
+You can write this data to a csv file using a CSVWriter.
 
-== Write a List of Es to a CSV file ==
-The CSVWriter uses a CSVEntryConverter to convert an object E to a String[] array.
+=== Write a List of Es to a CSV file ===
+The CSVWriter uses a CSVEntryConverter to convert an object of type E to a String[] array, that will be written to the csv file.
 {{{
 public interface CSVEntryConverter<E> {
 	public String[] convertEntry(E e);
 }
 }}}
 
-The CSVEntryConverter for our Person class might look like this:
+The CSVEntryConverter for our Person class could look like this:
 {{{
 public class PersonEntryConverter implements CSVEntryConverter<Person> {
 	@Override
@@ -30,22 +30,22 @@ public class PersonEntryConverter implements CSVEntryConverter<Person> {
 
 		columns[0] = p.getFirstName();
 		columns[1] = p.getLastName();
-		columns[2] = p.getAge() + "";
+		columns[2] = String.valueOf(p.getAge());
 
 		return columns;
 	}
 }
 }}}
 
-We can now build the CSVWriter instance and provide our entry converter implementation. Like as in the previous example, we use the `CSVWriter.Builder` to configure our CSVStrategy and CSVEntryConverter.
+We can now build the CSVWriter instance and provide our entry converter implementation. Like as in the previous example, we use the `CSVWriterBuilder` to configure our CSVWriter and provide the csv entry converter.
 {{{
 Writer out = new FileWriter("persons.csv");
 
-CSVWriter<Person> csvWriter = new CSVWriter.Builder<Person>(out).entryConverter(new PersonEntryConverter()).build();
+CSVWriter<Person> csvWriter = new CSVWriterBuilder<Person>(out).entryConverter(new PersonEntryConverter()).build();
 csvWriter.writeAll(persons);
 }}}
 
-== Default implementation ==
+=== Default implementation ===
 jCSV comes with a default implementation of the CSVEntryConverter, that processes String[] arrays. This implementation may come in handy if you read the data using the default CSVReader.
 {{{
 public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
@@ -53,5 +53,16 @@ public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
 	public String[] convertEntry(String[] data) {
 		return data;
 	}
+}
+}}}
+
+
+=== Incremental writing ===
+If you want to write a very large csv file and can not hold all your object instances in memory, you can write each entry separately using the `CSVWriter#write(E e)` method.
+{{{
+for (int i = 0; i < ONE_MILLION; i++) {
+  Person p = newRandomPerson();
+  csvWriter.write(person);
+  csvWriter.flush();
 }
 }}}
