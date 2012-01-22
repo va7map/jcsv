@@ -8,10 +8,10 @@ jCSV also provides mechanisms to bind the csv file directly to java objects. See
 jCSV fully supports the csv standard that is described in: [http://en.wikipedia.org/wiki/Comma-separated_values Comma-separated values - Wikipedia]
 
 More features:
-  * entry filter, see
-  * fully configurable format, see
-  * cached csv reader, see
-  * write csv files, see
+  * entry filter, see [CSVEntryFilter here]
+  * fully configurable format, see [CSVStrategy here]
+  * cached csv reader, see [CachedReader here]
+  * write csv files, see [CSVWriter here]
 
 
 === Questions? ===
