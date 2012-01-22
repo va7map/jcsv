@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.003" errors="0" skipped="0" tests="1" name="de.eikeb.jcsv.reader.internal.DefaultCSVEntryParserTest">
+<testsuite failures="0" time="0.001" errors="0" skipped="0" tests="2" name="de.eikeb.jcsv.util.CSVUtilTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -58,5 +58,6 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.001" classname="de.eikeb.jcsv.reader.internal.DefaultCSVEntryParserTest" name="testParseEntry"/>
+  <testcase time="0" classname="de.eikeb.jcsv.util.CSVUtilTest" name="testImplode"/>
+  <testcase time="0" classname="de.eikeb.jcsv.util.CSVUtilTest" name="testSplit"/>
 </testsuite>
