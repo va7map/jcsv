@@ -44,6 +44,11 @@ public class CSVWriterImpl<E> implements CSVWriter<E> {
 	}
 
 	@Override
+	public void flush() throws IOException {
+		writer.flush();
+	}
+
+	@Override
 	public void close() throws IOException {
 		writer.close();
 	}

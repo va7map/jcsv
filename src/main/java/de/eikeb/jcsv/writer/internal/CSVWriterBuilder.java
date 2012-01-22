@@ -6,13 +6,14 @@ import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.util.Builder;
 import de.eikeb.jcsv.writer.CSVColumnJoiner;
 import de.eikeb.jcsv.writer.CSVEntryConverter;
+import de.eikeb.jcsv.writer.CSVWriter;
 
 /**
  * The builder that creates the CSVWriterImpl instance.
  *
  * @param <E> The Type of the records
  */
-public class CSVWriterBuilder<E> implements Builder<CSVWriterImpl<E>>{
+public class CSVWriterBuilder<E> implements Builder<CSVWriter<E>>{
 	final Writer writer;
 	CSVStrategy strategy = CSVStrategy.DEFAULT;
 	CSVEntryConverter<E> entryConverter;
@@ -69,7 +70,7 @@ public class CSVWriterBuilder<E> implements Builder<CSVWriterImpl<E>>{
 	 * @return the CSVWriterImpl instance
 	 */
 	@Override
-	public CSVWriterImpl<E> build() {
+	public CSVWriter<E> build() {
 		if (entryConverter == null) {
 			throw new IllegalStateException("you have to specify an entry converter");
 		}
@@ -85,7 +86,7 @@ public class CSVWriterBuilder<E> implements Builder<CSVWriterImpl<E>>{
 	 * @param writer the character output stream
 	 * @return the CSVWriterImpl
 	 */
-	public static CSVWriterImpl<String[]> newDefaultWriter(Writer writer) {
+	public static CSVWriter<String[]> newDefaultWriter(Writer writer) {
 		return new CSVWriterBuilder<String[]>(writer).entryConverter(new DefaultCSVEntryConverter()).build();
 	}
 }

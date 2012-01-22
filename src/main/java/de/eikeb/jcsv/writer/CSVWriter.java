@@ -1,6 +1,7 @@
 package de.eikeb.jcsv.writer;
 
 import java.io.Closeable;
+import java.io.Flushable;
 import java.io.IOException;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  *
  * @param <E> The type of the records
  */
-public interface CSVWriter<E> extends Closeable {
+public interface CSVWriter<E> extends Closeable, Flushable {
 	/**
 	 * Writes an entry E to the specified character output stream.
 	 *
