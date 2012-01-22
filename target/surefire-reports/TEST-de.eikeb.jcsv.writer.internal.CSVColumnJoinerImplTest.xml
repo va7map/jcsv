@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="1" name="de.eikeb.jcsv.writer.internal.CSVColumnJoinerImplTest">
+<testsuite failures="0" time="0.005" errors="0" skipped="0" tests="1" name="de.eikeb.jcsv.writer.internal.CSVColumnJoinerImplTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/eike/workspace/jcsv"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter2179466377501679763.jar"/>
+    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter6895398813961491947.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter2179466377501679763.jar /home/eike/workspace/jcsv/target/surefire/surefire4890465897757301811tmp /home/eike/workspace/jcsv/target/surefire/surefire1104986117839012776tmp"/>
+    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter6895398813961491947.jar /home/eike/workspace/jcsv/target/surefire/surefire4536988305667096979tmp /home/eike/workspace/jcsv/target/surefire/surefire1092085341145552693tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="de"/>
     <property name="java.vm.info" value="mixed mode"/>
