@@ -53,7 +53,7 @@ public class CSVUtil {
 	 * @param preserveAllTokens
 	 *            if true, adjacent separators are treated as empty token
 	 *            separators
-	 * @return
+	 * @return the splitted string
 	 */
 	public static String[] split(String str, char separatorChar, boolean preserveAllTokens) {
 		if (str == null) {
