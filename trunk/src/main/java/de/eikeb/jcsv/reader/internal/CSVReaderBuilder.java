@@ -104,12 +104,12 @@ public class CSVReaderBuilder<E> implements Builder<CSVReader<E>> {
 	 * DefaultCSVEntryParser that allows you to convert a csv file into a
 	 * List<String[]>.
 	 *
-	 * @param input
+	 * @param reader
 	 *            the csv reader
 	 * @return the CSVReaderImpl
 	 */
-	public static CSVReader<String[]> newDefaultReader(Reader input) {
-		return new CSVReaderBuilder<String[]>(input).entryParser(new DefaultCSVEntryParser()).build();
+	public static CSVReader<String[]> newDefaultReader(Reader reader) {
+		return new CSVReaderBuilder<String[]>(reader).entryParser(new DefaultCSVEntryParser()).build();
 	}
 
 	/**

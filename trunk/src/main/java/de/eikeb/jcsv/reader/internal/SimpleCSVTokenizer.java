@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-
 import de.eikeb.jcsv.CSVStrategy;
 import de.eikeb.jcsv.reader.CSVTokenizer;
+import de.eikeb.jcsv.util.CSVUtil;
 
 /**
  * A very simple csv tokenizer implementation.
@@ -29,7 +28,8 @@ public class SimpleCSVTokenizer implements CSVTokenizer {
 			return new ArrayList<String>();
 		}
 
-		List<String> tokens = Arrays.asList(StringUtils.splitPreserveAllTokens(line, strategy.getDelimiter()));
+		// split the line and preserve all tokens
+		List<String> tokens = Arrays.asList(CSVUtil.split(line, strategy.getDelimiter(), true));
 
 		return tokens;
 	}

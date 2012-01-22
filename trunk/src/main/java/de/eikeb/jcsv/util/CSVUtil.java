@@ -1,5 +1,8 @@
 package de.eikeb.jcsv.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Provides some useful functions.
  */
@@ -9,14 +12,15 @@ public class CSVUtil {
 	}
 
 	/**
-	 * Concats the String[] array data to a single String, using the specified delimiter
-	 * as the glue.
+	 * Concats the String[] array data to a single String, using the specified
+	 * delimiter as the glue.
 	 *
-	 * <code>implode({"A", "B", "C"}, ";")</code>
-	 * would result in A;B;C
+	 * <code>implode({"A", "B", "C"}, ";")</code> would result in A;B;C
 	 *
-	 * @param data the strings that should be concatinated
-	 * @param delimiter the delimiter
+	 * @param data
+	 *            the strings that should be concatinated
+	 * @param delimiter
+	 *            the delimiter
 	 * @return the concatinated string
 	 */
 	public static String implode(String[] data, String delimiter) {
@@ -30,5 +34,56 @@ public class CSVUtil {
 		}
 
 		return sb.toString();
+	}
+
+	/**
+	 * Splits the provided text into an array, separator specified, preserving
+	 * all tokens, including empty tokens created by adjacent separators.
+	 *
+	 * CSVUtil.split(null, *, true) = null
+	 * CSVUtil.split("", *, , true) = []
+	 * CSVUtil.split("a.b.c", '.', true) = ["a", "b", "c"]
+	 * CSVUtil.split("a...c", '.', true) = ["a", "", "", "c"]
+	 * CSVUtil.split("a...c", '.', false) = ["a", "c"]
+	 *
+	 * @param str
+	 *            the string to parse
+	 * @param separatorChar
+	 *            the seperator char
+	 * @param preserveAllTokens
+	 *            if true, adjacent separators are treated as empty token
+	 *            separators
+	 * @return
+	 */
+	public static String[] split(String str, char separatorChar, boolean preserveAllTokens) {
+		if (str == null) {
+			return null;
+		}
+		int len = str.length();
+		if (len == 0) {
+			return new String[0];
+		}
+		List<String> list = new ArrayList<String>();
+		int i = 0, start = 0;
+		boolean match = false;
+		boolean lastMatch = false;
+		while (i < len) {
+			if (str.charAt(i) == separatorChar) {
+				if (match || preserveAllTokens) {
+					list.add(str.substring(start, i));
+					match = false;
+					lastMatch = true;
+				}
+				start = ++i;
+				continue;
+			}
+			lastMatch = false;
+			match = true;
+			i++;
+		}
+		if (match || preserveAllTokens && lastMatch) {
+			list.add(str.substring(start, i));
+		}
+		return list.toArray(new String[list.size()]);
 	}
 }
