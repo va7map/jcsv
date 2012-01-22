@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.003" errors="0" skipped="0" tests="3" name="de.eikeb.jcsv.writer.internal.CSVWriterImplTest">
+<testsuite failures="0" time="0.004" errors="0" skipped="0" tests="3" name="de.eikeb.jcsv.writer.internal.CSVWriterImplTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/eike/workspace/jcsv"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter1316637156863920970.jar"/>
+    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter8114021151367528816.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter1316637156863920970.jar /home/eike/workspace/jcsv/target/surefire/surefire925062607839017156tmp /home/eike/workspace/jcsv/target/surefire/surefire707786836062464550tmp"/>
+    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter8114021151367528816.jar /home/eike/workspace/jcsv/target/surefire/surefire6910645949540779290tmp /home/eike/workspace/jcsv/target/surefire/surefire4308137387580050056tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="de"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -58,7 +58,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.001" classname="de.eikeb.jcsv.writer.internal.CSVWriterImplTest" name="testWriteAll"/>
-  <testcase time="0" classname="de.eikeb.jcsv.writer.internal.CSVWriterImplTest" name="testWrite"/>
+  <testcase time="0.002" classname="de.eikeb.jcsv.writer.internal.CSVWriterImplTest" name="testWriteAll"/>
+  <testcase time="0.001" classname="de.eikeb.jcsv.writer.internal.CSVWriterImplTest" name="testWrite"/>
   <testcase time="0" classname="de.eikeb.jcsv.writer.internal.CSVWriterImplTest" name="testClose"/>
 </testsuite>
