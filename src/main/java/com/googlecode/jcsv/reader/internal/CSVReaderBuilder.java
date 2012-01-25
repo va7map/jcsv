@@ -73,7 +73,7 @@ public class CSVReaderBuilder<E> implements Builder<CSVReader<E>> {
 	/**
 	 * Sets the csv tokenizer implementation. If you don't specify your own csv
 	 * tokenizer strategy, the default tokenizer will be used.
-	 * {@link de.eikeb.jcsv.reader.internal.CSVTokenizerImpl}
+	 * {@link com.googlecode.jcsv.reader.internal.CSVTokenizerImpl}
 	 *
 	 * @param tokenizer
 	 *            the csv tokenizer

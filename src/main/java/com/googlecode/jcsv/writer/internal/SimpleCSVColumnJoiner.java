@@ -11,7 +11,7 @@ import com.googlecode.jcsv.writer.CSVColumnJoiner;
  *
  * If you need a full support of the CSV formatting standard
  * you should use
- * {@link de.eikeb.jcsv.writer.internal.CSVColumnJoinerImpl}
+ * {@link com.googlecode.jcsv.writer.internal.CSVColumnJoinerImpl}
  */
 public class SimpleCSVColumnJoiner implements CSVColumnJoiner {
 

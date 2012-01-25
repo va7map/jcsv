@@ -54,7 +54,7 @@ public class CSVWriterBuilder<E> implements Builder<CSVWriter<E>>{
 	 * Sets the column joiner strategy that the CSVWriterImpl will use.
 	 * If you don't specify your own csv tokenizer strategy, the default
 	 * column joiner will be used.
-	 * {@link de.eikeb.jcsv.writer.internal.CSVColumnJoinerImpl}
+	 * {@link com.googlecode.jcsv.writer.internal.CSVColumnJoinerImpl}
 	 *
 	 * @param columnJoiner the column joiner
 	 * @return this builder
