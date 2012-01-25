@@ -5,7 +5,7 @@ package com.googlecode.jcsv.reader;
  * to a java object.
  *
  * The default implementation of this interface is
- * {@link de.eikeb.jcsv.reader.internal.DefaultCSVEntryParser}
+ * {@link com.googlecode.jcsv.reader.internal.DefaultCSVEntryParser}
  * That implementation just returns the String[] array without any conversion.
  *
  * @param <E> The Type that the entry parser creates
