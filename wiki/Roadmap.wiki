@@ -1,6 +1,6 @@
  = Roadmap =
 
-=== Version 1.2.0 ===
+=== Version 1.3.0 ===
   * random access support for the cached reader
   * clear a specific range of records from the cache of the csv reader
   * performance improvements
