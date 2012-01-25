@@ -1,0 +1,7 @@
+com.googlecode.jcsv
+com.googlecode.jcsv.annotations
+com.googlecode.jcsv.reader
+com.googlecode.jcsv.reader.internal
+com.googlecode.jcsv.util
+com.googlecode.jcsv.writer
+com.googlecode.jcsv.writer.internal
