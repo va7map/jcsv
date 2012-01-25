@@ -10,7 +10,7 @@
 
 	<groupId>com.googlecode.jcsv</groupId>
 	<artifactId>jcsv-core</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<name>jCSV</name>
 	<packaging>jar</packaging>
 
