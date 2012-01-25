@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -11,8 +11,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.eikeb.jcsv.writer.CSVEntryConverter;
-import de.eikeb.jcsv.writer.CSVWriter;
+import com.googlecode.jcsv.writer.CSVEntryConverter;
+import com.googlecode.jcsv.writer.CSVWriter;
 
 public class CSVWriterImplTest extends TestCase {
 

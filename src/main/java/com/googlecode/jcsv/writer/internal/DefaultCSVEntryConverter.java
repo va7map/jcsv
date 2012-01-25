@@ -1,6 +1,6 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
-import de.eikeb.jcsv.writer.CSVEntryConverter;
+import com.googlecode.jcsv.writer.CSVEntryConverter;
 
 /**
  * The (simple) default implementation of the CSVEntryConverter. It just returns

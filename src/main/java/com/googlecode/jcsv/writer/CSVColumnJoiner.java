@@ -1,6 +1,6 @@
-package de.eikeb.jcsv.writer;
+package com.googlecode.jcsv.writer;
 
-import de.eikeb.jcsv.CSVStrategy;
+import com.googlecode.jcsv.CSVStrategy;
 
 /**
  * The csv column joiner receives an array of strings and joines it

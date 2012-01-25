@@ -1,11 +1,11 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
 import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.writer.CSVColumnJoiner;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.writer.CSVColumnJoiner;
 
 public class CSVColumnJoinerImplTest extends TestCase {
 

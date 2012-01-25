@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.util;
+package com.googlecode.jcsv.util;
 
 public class Person {
 	private final String firstName;

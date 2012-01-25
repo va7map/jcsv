@@ -1,10 +1,10 @@
-package de.eikeb.jcsv.reader;
+package com.googlecode.jcsv.reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-import de.eikeb.jcsv.CSVStrategy;
+import com.googlecode.jcsv.CSVStrategy;
 
 
 /**

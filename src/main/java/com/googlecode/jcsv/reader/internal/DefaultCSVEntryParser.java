@@ -1,6 +1,6 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
-import de.eikeb.jcsv.reader.CSVEntryParser;
+import com.googlecode.jcsv.reader.CSVEntryParser;
 
 /**
  * A default implementation of the CSVEntryParser.

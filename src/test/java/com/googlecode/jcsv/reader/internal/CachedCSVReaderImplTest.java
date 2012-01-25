@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -13,10 +13,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVReader;
-import de.eikeb.jcsv.util.Person;
-import de.eikeb.jcsv.util.PersonEntryParser;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVReader;
+import com.googlecode.jcsv.util.Person;
+import com.googlecode.jcsv.util.PersonEntryParser;
 
 public class CachedCSVReaderImplTest {
 

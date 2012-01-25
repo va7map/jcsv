@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,8 +10,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVTokenizer;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVTokenizer;
 
 public class CSVTokenizerImplTest {
 

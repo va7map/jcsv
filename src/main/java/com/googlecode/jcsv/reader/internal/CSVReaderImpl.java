@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVEntryFilter;
-import de.eikeb.jcsv.reader.CSVEntryParser;
-import de.eikeb.jcsv.reader.CSVReader;
-import de.eikeb.jcsv.reader.CSVTokenizer;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVEntryFilter;
+import com.googlecode.jcsv.reader.CSVEntryParser;
+import com.googlecode.jcsv.reader.CSVReader;
+import com.googlecode.jcsv.reader.CSVTokenizer;
 
 public class CSVReaderImpl<E> implements CSVReader<E> {
 	private final BufferedReader reader;

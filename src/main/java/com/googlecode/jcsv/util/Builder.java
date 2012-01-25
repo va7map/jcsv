@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.util;
+package com.googlecode.jcsv.util;
 
 /**
  * The Builder interfaces indicates that the class can build
