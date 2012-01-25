@@ -1,6 +1,6 @@
-package de.eikeb.jcsv.util;
+package com.googlecode.jcsv.util;
 
-import de.eikeb.jcsv.reader.CSVEntryParser;
+import com.googlecode.jcsv.reader.CSVEntryParser;
 
 public class PersonEntryParser implements CSVEntryParser<Person> {
 	@Override

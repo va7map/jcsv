@@ -8,7 +8,6 @@
 		<version>7</version>
 	</parent>
 
-
 	<groupId>com.googlecode.jcsv</groupId>
 	<artifactId>jcsv-core</artifactId>
 	<version>1.2.0</version>

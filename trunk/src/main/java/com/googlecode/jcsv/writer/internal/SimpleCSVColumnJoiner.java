@@ -1,8 +1,8 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.util.CSVUtil;
-import de.eikeb.jcsv.writer.CSVColumnJoiner;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.util.CSVUtil;
+import com.googlecode.jcsv.writer.CSVColumnJoiner;
 
 /**
  * This is a simple implementation of the CSVColumnJoiner.

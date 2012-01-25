@@ -1,14 +1,14 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import java.io.Reader;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVEntryFilter;
-import de.eikeb.jcsv.reader.CSVEntryParser;
-import de.eikeb.jcsv.reader.CSVReader;
-import de.eikeb.jcsv.reader.CSVTokenizer;
-import de.eikeb.jcsv.reader.CachedCSVReader;
-import de.eikeb.jcsv.util.Builder;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVEntryFilter;
+import com.googlecode.jcsv.reader.CSVEntryParser;
+import com.googlecode.jcsv.reader.CSVReader;
+import com.googlecode.jcsv.reader.CSVTokenizer;
+import com.googlecode.jcsv.reader.CachedCSVReader;
+import com.googlecode.jcsv.util.Builder;
 
 /**
  * The Builder that creates the CSVReaderImpl objects.

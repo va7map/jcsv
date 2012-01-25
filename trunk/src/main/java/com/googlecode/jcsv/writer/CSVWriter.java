@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.writer;
+package com.googlecode.jcsv.writer;
 
 import java.io.Closeable;
 import java.io.Flushable;

@@ -1,10 +1,10 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-import de.eikeb.jcsv.reader.CSVEntryParser;
+import com.googlecode.jcsv.reader.CSVEntryParser;
 
 public class DefaultCSVEntryParserTest {
 

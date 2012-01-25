@@ -1,10 +1,10 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
 import java.util.regex.Pattern;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.util.CSVUtil;
-import de.eikeb.jcsv.writer.CSVColumnJoiner;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.util.CSVUtil;
+import com.googlecode.jcsv.writer.CSVColumnJoiner;
 
 /**
  * This is the default implementation of the CSVColumnJoiner.

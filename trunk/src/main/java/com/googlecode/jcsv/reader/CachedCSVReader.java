@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader;
+package com.googlecode.jcsv.reader;
 
 import java.io.Closeable;
 import java.util.ListIterator;

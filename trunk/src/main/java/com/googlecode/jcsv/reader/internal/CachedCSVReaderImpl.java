@@ -1,12 +1,12 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import de.eikeb.jcsv.reader.CSVReader;
-import de.eikeb.jcsv.reader.CachedCSVReader;
+import com.googlecode.jcsv.reader.CSVReader;
+import com.googlecode.jcsv.reader.CachedCSVReader;
 
 
 public class CachedCSVReaderImpl<E> implements CachedCSVReader<E> {

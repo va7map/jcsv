@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader;
+package com.googlecode.jcsv.reader;
 
 /**
  * The CSVEntryFilter is used to filter the records of a

@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.writer;
+package com.googlecode.jcsv.writer;
 
 /**
  * The CSVEntryConverter receives a java object and converts it

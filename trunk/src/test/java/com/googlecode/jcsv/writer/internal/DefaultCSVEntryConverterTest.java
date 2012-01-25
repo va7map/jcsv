@@ -1,10 +1,10 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
-import de.eikeb.jcsv.writer.CSVEntryConverter;
+import com.googlecode.jcsv.writer.CSVEntryConverter;
 
 public class DefaultCSVEntryConverterTest {
 

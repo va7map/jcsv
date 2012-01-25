@@ -1,12 +1,12 @@
-package de.eikeb.jcsv.writer.internal;
+package com.googlecode.jcsv.writer.internal;
 
 import java.io.Writer;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.util.Builder;
-import de.eikeb.jcsv.writer.CSVColumnJoiner;
-import de.eikeb.jcsv.writer.CSVEntryConverter;
-import de.eikeb.jcsv.writer.CSVWriter;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.util.Builder;
+import com.googlecode.jcsv.writer.CSVColumnJoiner;
+import com.googlecode.jcsv.writer.CSVEntryConverter;
+import com.googlecode.jcsv.writer.CSVWriter;
 
 /**
  * The builder that creates the CSVWriterImpl instance.

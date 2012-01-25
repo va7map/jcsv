@@ -1,4 +1,4 @@
-package de.eikeb.jcsv;
+package com.googlecode.jcsv;
 
 public class CSVStrategy {
 

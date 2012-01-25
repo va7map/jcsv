@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.util;
+package com.googlecode.jcsv.util;
 
 import java.util.ArrayList;
 import java.util.List;

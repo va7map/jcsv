@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.annotations;
+package com.googlecode.jcsv.annotations;
 
 public interface CSVType {
 

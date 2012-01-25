@@ -1,12 +1,12 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVTokenizer;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVTokenizer;
 
 /**
  * This is the default implementation of the CSVTokenizer.

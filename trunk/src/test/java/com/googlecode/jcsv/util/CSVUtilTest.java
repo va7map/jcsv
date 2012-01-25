@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.util;
+package com.googlecode.jcsv.util;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 

@@ -1,4 +1,4 @@
-package de.eikeb.jcsv.reader.internal;
+package com.googlecode.jcsv.reader.internal;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import de.eikeb.jcsv.CSVStrategy;
-import de.eikeb.jcsv.reader.CSVTokenizer;
-import de.eikeb.jcsv.util.CSVUtil;
+import com.googlecode.jcsv.CSVStrategy;
+import com.googlecode.jcsv.reader.CSVTokenizer;
+import com.googlecode.jcsv.util.CSVUtil;
 
 /**
  * A very simple csv tokenizer implementation.
