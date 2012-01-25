@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>com.googlecode.jcsv</groupId>
-	<artifactId>jcsv-core</artifactId>
+	<artifactId>jcsv</artifactId>
 	<version>1.2.0-SNAPSHOT</version>
 	<name>jCSV</name>
 	<packaging>jar</packaging>
