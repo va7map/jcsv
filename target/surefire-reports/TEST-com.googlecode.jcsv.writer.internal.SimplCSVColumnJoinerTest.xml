@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.002" errors="0" skipped="0" tests="1" name="com.googlecode.jcsv.writer.internal.SimplCSVColumnJoinerTest">
+<testsuite failures="0" time="0.001" errors="0" skipped="0" tests="1" name="com.googlecode.jcsv.writer.internal.SimplCSVColumnJoinerTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/eike/workspace/jcsv"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter7759670481617092757.jar"/>
+    <property name="surefire.real.class.path" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter8744784700491029892.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.26/jre"/>
-    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter7759670481617092757.jar /home/eike/workspace/jcsv/target/surefire/surefire2512514702523089735tmp /home/eike/workspace/jcsv/target/surefire/surefire8582879124927447220tmp"/>
+    <property name="sun.java.command" value="/home/eike/workspace/jcsv/target/surefire/surefirebooter8744784700491029892.jar /home/eike/workspace/jcsv/target/surefire/surefire2718955382185293960tmp /home/eike/workspace/jcsv/target/surefire/surefire6218917397050276538tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="de"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -58,5 +58,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.002" classname="com.googlecode.jcsv.writer.internal.SimplCSVColumnJoinerTest" name="testJoinColumns"/>
+  <testcase time="0.001" classname="com.googlecode.jcsv.writer.internal.SimplCSVColumnJoinerTest" name="testJoinColumns"/>
 </testsuite>
