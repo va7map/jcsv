@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * The MapToColumn annotation is used to instruct the AnnotationEntryParser.
- * You can specify the column in the csv file and which column processor
+ * You can specify the column in the csv file and which value processor
  * should be used for converting.
  *
  */
