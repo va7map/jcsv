@@ -121,6 +121,10 @@ List<Person> persons = csvPersonReader.readAll();
 
 Thats all. There is no need to implement an entry parser anymore.
 
+jCSV uses reflection to set the values, so there are a few drawbacks if you choose to parse your csv using annotations:
+  * The properties have to be non-final
+  * There has to be an accessible default constructor
+
 === Value processors ===
 jCSV uses value processors to convert the String data to the needed type. As you can see in the example above, the third column is mapped to an int property. jCSV now uses the IntegerProcessor to convert the String into an Integer. There are several default value processors, such as primitives (and its wrapper types) and a StringProcessor.
 
