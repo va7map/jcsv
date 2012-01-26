@@ -16,7 +16,7 @@ jCSV is available in the Maven repository:
 {{{
 <dependency>
 	<groupId>com.googlecode.jcsv</groupId>
-	<artifactId>jcsv/artifactId>
+	<artifactId>jcsv</artifactId>
 	<version>1.2.0</version>
 </dependency>
 }}}
