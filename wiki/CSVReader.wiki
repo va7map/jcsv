@@ -1,4 +1,6 @@
-#summary A simple example that shows how to map CSV entries to java objects
+#summary A simple example that shows several ways to read a csv file
+
+<wiki:toc max_depth="2" />
 
 = Introduction =
 
@@ -12,7 +14,7 @@ Each line represents a person. Each person has a first name, a last name and an 
 
 It is very easy to parse this csv file using jCSV. It comes with a fully configured CSVReader that does (mostly) all of the work.
 
-== Parse the data as a String[] array ==
+= Parse the data as a String[] array =
 A straightforward approach would be to read the file line by line. Each line would be split at ';', so we would receive an String[] array containing the three data parts.
 
 The default CSVParser configuration follows this approach, you can obtain this parser using the static factory method `CSVReaderBuilder.newDefaultReader(Reader reader)`.
@@ -28,7 +30,7 @@ You see, it's quite easy to read a CSV file and use the data in your program.
 
 However, using a List of String[] arrays is not very handy ;)
 
-=== Create Java objects ===
+= Create Java objects =
 
 It would be a lot easier to use a List of Persons in your program. jCSV can convert each row into a java object.
 
@@ -77,7 +79,7 @@ List<Person> persons = csvPersonReader.readAll();
 
 That's it, you have completely parsed a csv file in just 4 lines!
 
-=== Incremental reading ===
+= Incremental reading =
 If you have a large csv file, you possibly can not read the whole csv file into your memory. Therefore, there is the possbility to incrementaly read the records of the file.
 
 The CSVReader interfaces extends the Iterable interface, so you can simply iterate over the records using an Iterator:
