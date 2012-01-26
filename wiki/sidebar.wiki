@@ -2,6 +2,7 @@
   * [Install Install jCSV]
   * Examples
     * [CSVReader Read a CSV file]
+    * [Annotations Read a CSV file using Annotations]
     * [CSVWriter Write a CSV file]
     * [CSVEntryFilter The CSVEntryFilter]
     * [CSVStrategy Specify the csv format]
