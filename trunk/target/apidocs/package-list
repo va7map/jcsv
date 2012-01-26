@@ -1,5 +1,7 @@
 com.googlecode.jcsv
 com.googlecode.jcsv.annotations
+com.googlecode.jcsv.annotations.internal
+com.googlecode.jcsv.annotations.processors
 com.googlecode.jcsv.reader
 com.googlecode.jcsv.reader.internal
 com.googlecode.jcsv.util
