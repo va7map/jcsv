@@ -3,8 +3,7 @@
 === Version 1.3.0 ===
   * Random access support for the cached reader
   * Clear a specific range of records from the cache of the csv reader
-  * ~~Annotation based entry converter~~
-
+  * ~~Annotation based entry converter~~ _available in latest SNAPSHOT_
 === Versoin 2.0.0 ===
   * Code refactoring
   * Performance improvements
