@@ -38,7 +38,7 @@ List<String[]> persons = csvPersonReader.readAll();
 }}}
 You see, it's quite easy to read a CSV file and use the data in your program.
 
-= Create Java objects using the CSVEntryParser =
+== Create Java objects using the CSVEntryParser ==
 
 But it would be a lot easier to use a List of Person objects in your program. jCSV can achieve this for you, it can convert each row into a java object.
 
@@ -87,7 +87,7 @@ List<Person> persons = csvPersonReader.readAll();
 
 That's it, you have completely parsed a csv file in just 4 lines!
 
-= Create Java objects using the AnnotationEntryParser =
+== Create Java objects using the AnnotationEntryParser ==
 Instead of implementing an entry parser, you can instruct jCSV with an annotated class, that specifies how to build the Person objects.
 All we have to do is to map the columns from the csv file to the class's properties. This mapping is done via annotations in the class that we would like to build. The annotation we use for this purpose is `MapToColumn`, it comes with two parameter:
   * column (required), the column in the csv file
