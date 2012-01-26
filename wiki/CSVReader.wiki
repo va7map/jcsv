@@ -1,5 +1,6 @@
 #summary A simple example that shows several ways to read a csv file
 
+= Table of contents =
 <wiki:toc max_depth="2" />
 
 = Introduction =
