@@ -29,18 +29,18 @@ public class ValueProcessorProvider {
 
 	private static Map<Class<?>, ValueProcessor<?>> processors = new HashMap<Class<?>, ValueProcessor<?>>();
 
-	private static Map<Class<?>, Class<?>> primiteWrapperTypeMap = new HashMap<Class<?>, Class<?>>();
+	private static Map<Class<?>, Class<?>> primitiveWrapperTypeMap = new HashMap<Class<?>, Class<?>>();
 
 	static {
 		// fill the primitive types map
-		primiteWrapperTypeMap.put(boolean.class, Boolean.class);
-		primiteWrapperTypeMap.put(byte.class, Byte.class);
-		primiteWrapperTypeMap.put(char.class, Character.class);
-		primiteWrapperTypeMap.put(double.class, Double.class);
-		primiteWrapperTypeMap.put(float.class, Float.class);
-		primiteWrapperTypeMap.put(int.class, Integer.class);
-		primiteWrapperTypeMap.put(long.class, Long.class);
-		primiteWrapperTypeMap.put(short.class, Short.class);
+		primitiveWrapperTypeMap.put(boolean.class, Boolean.class);
+		primitiveWrapperTypeMap.put(byte.class, Byte.class);
+		primitiveWrapperTypeMap.put(char.class, Character.class);
+		primitiveWrapperTypeMap.put(double.class, Double.class);
+		primitiveWrapperTypeMap.put(float.class, Float.class);
+		primitiveWrapperTypeMap.put(int.class, Integer.class);
+		primitiveWrapperTypeMap.put(long.class, Long.class);
+		primitiveWrapperTypeMap.put(short.class, Short.class);
 
 		// register the default value processors
 		registerValueProcessor(String.class, new StringProcessor());
@@ -99,7 +99,7 @@ public class ValueProcessorProvider {
 	public static <E> ValueProcessor<E> getValueProcessor(Class<E> clazz) {
 		if (clazz.isPrimitive()) {
 			// this cast is safe
-			clazz = (Class<E>) primiteWrapperTypeMap.get(clazz);
+			clazz = (Class<E>) primitiveWrapperTypeMap.get(clazz);
 		}
 
 		if (!processors.containsKey(clazz)) {
