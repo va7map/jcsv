@@ -1,7 +1,10 @@
  = Roadmap =
 
 === Version 1.3.0 ===
-  * random access support for the cached reader
-  * clear a specific range of records from the cache of the csv reader
-  * performance improvements
-  * annotation entry converter
+  * Random access support for the cached reader
+  * Clear a specific range of records from the cache of the csv reader
+  * Annotation based entry converter
+
+=== Versoin 2.0.0
+  * Code refactoring
+  * Performance improvements
