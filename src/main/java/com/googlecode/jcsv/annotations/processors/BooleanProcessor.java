@@ -15,7 +15,7 @@ public class BooleanProcessor implements ValueProcessor<Boolean> {
 	 * @return Boolean the result
 	 */
 	@Override
-	public Boolean processColumn(String value) {
+	public Boolean processValue(String value) {
 		return Boolean.parseBoolean(value);
 	}
 }

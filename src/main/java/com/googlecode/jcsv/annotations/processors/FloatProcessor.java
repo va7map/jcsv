@@ -15,7 +15,7 @@ public class FloatProcessor implements ValueProcessor<Float> {
 	 * @return Float the result
 	 */
 	@Override
-	public Float processColumn(String value) {
+	public Float processValue(String value) {
 		return Float.parseFloat(value);
 	}
 }

@@ -15,7 +15,7 @@ public class DoubleProcessor implements ValueProcessor<Double> {
 	 * @return Double the result
 	 */
 	@Override
-	public Double processColumn(String value) {
+	public Double processValue(String value) {
 		return Double.parseDouble(value);
 	}
 }

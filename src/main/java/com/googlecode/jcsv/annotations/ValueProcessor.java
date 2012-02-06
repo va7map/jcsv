@@ -16,5 +16,5 @@ public interface ValueProcessor<E> {
 	 * @param value the value that should be converted
 	 * @return the converted object
 	 */
-	public E processColumn(String value);
+	public E processValue(String value);
 }

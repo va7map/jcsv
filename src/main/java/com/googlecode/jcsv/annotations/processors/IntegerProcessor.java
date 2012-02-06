@@ -15,7 +15,7 @@ public class IntegerProcessor implements ValueProcessor<Integer> {
 	 * @return Integer the result
 	 */
 	@Override
-	public Integer processColumn(String value) {
+	public Integer processValue(String value) {
 		return Integer.parseInt(value);
 	}
 }

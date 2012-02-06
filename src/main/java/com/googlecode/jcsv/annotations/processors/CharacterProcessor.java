@@ -17,7 +17,7 @@ public class CharacterProcessor implements ValueProcessor<Character> {
 	 *             if the value's length is not 1
 	 */
 	@Override
-	public Character processColumn(String value) {
+	public Character processValue(String value) {
 		if (value.length() != 1) {
 			throw new IllegalArgumentException(String.format("%s is not a valud character, it's length must be 1",
 					value));

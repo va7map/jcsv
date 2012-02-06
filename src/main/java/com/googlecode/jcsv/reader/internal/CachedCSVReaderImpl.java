@@ -76,6 +76,21 @@ public class CachedCSVReaderImpl<E> implements CachedCSVReader<E> {
 	}
 
 	@Override
+	public E get(int index) {
+		if (index < 0) {
+			throw new IllegalArgumentException("i has to be greater 0, but was " + index);
+		}
+
+		readUntil(index);
+
+		if (cachedEntries.size() < index) {
+			throw new ArrayIndexOutOfBoundsException(String.format("size: %s, index: %s", cachedEntries.size(), index));
+		}
+
+		return cachedEntries.get(index);
+	}
+
+	@Override
 	public void remove() {
 		throw new UnsupportedOperationException("remove not allowed");
 	}
@@ -95,15 +110,23 @@ public class CachedCSVReaderImpl<E> implements CachedCSVReader<E> {
 		reader.close();
 	}
 
-	private void cacheNextEntry() {
+	private void readUntil(int i) {
+		while (cacheNextEntry() && cachedEntries.size() <= i);
+	}
+
+	private boolean cacheNextEntry() {
+		boolean success = false;
 		try {
 			E entry = reader.readNext();
 			if (entry != null) {
 				cachedEntries.add(entry);
+				success = true;
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
+
+		return success;
 	}
 
 }
