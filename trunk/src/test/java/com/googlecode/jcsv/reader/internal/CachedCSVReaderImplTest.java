@@ -112,6 +112,26 @@ public class CachedCSVReaderImplTest {
 		assertSame(0, cachedReader.previousIndex());
 	}
 
+	@Test
+	public void testGet() {
+		Person result = cachedReader.get(1);
+		Person expected = new Person("Klaus", "Meyer", 33);
+		assertEquals(expected, result);
+
+		result = cachedReader.get(0);
+		expected = new Person("Hans", "im Glück", 16);
+		assertEquals(expected, result);
+
+		result = cachedReader.get(1);
+		expected = new Person("Klaus", "Meyer", 33);
+		assertEquals(expected, result);
+	}
+
+	@Test(expected = ArrayIndexOutOfBoundsException.class)
+	public void testGetFails() {
+		cachedReader.get(42);
+	}
+
 	@Test(expected = UnsupportedOperationException.class)
 	public void testRemove() {
 		cachedReader.remove();

@@ -15,7 +15,7 @@ public class StringProcessor implements ValueProcessor<String> {
 	 * @return String the value
 	 */
 	@Override
-	public String processColumn(String value) {
+	public String processValue(String value) {
 		return value;
 	}
 }

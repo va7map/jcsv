@@ -15,7 +15,7 @@ public class LongProcessor implements ValueProcessor<Long> {
 	 * @return Long the result
 	 */
 	@Override
-	public Long processColumn(String value) {
+	public Long processValue(String value) {
 		return Long.parseLong(value);
 	}
 }

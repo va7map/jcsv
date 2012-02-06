@@ -15,7 +15,7 @@ public class ShortProcessor implements ValueProcessor<Short> {
 	 * @return Short the result
 	 */
 	@Override
-	public Short processColumn(String value) {
+	public Short processValue(String value) {
 		return Short.parseShort(value);
 	}
 }
