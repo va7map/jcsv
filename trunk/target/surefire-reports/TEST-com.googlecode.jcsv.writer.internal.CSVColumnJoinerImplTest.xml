@@ -58,5 +58,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="com.googlecode.jcsv.writer.internal.CSVColumnJoinerImplTest" name="testJoinColumns"/>
+  <testcase time="0.001" classname="com.googlecode.jcsv.writer.internal.CSVColumnJoinerImplTest" name="testJoinColumns"/>
 </testsuite>

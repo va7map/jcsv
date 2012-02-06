@@ -8,7 +8,7 @@ public class CSVStrategy {
 	 * - quote character "
 	 * - comment indicator #
 	 * - do not skip header
-	 * - ignore empty lines
+	 * - ignore empty lines 
 	 */
 	public static final CSVStrategy DEFAULT = new CSVStrategy(';', '"', '#', false, true);
 

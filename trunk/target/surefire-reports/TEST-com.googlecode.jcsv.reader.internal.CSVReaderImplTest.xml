@@ -60,5 +60,5 @@
   </properties>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CSVReaderImplTest" name="testReadAll"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CSVReaderImplTest" name="testReadNext"/>
-  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CSVReaderImplTest" name="testReadHeader"/>
+  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CSVReaderImplTest" name="testReadHeader"/>
 </testsuite>
