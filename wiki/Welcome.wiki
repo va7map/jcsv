@@ -12,7 +12,7 @@ More features:
   * fully configurable format, see [CSVStrategy here]
   * cached csv reader, see [CachedReader here]
   * write csv files, see [CSVWriter here]
-
+  * parse a csv file via Annotations, see [CSVReader#Create_Java_objects_using_annotations here]
 
 === Questions? ===
 If you have questions concerning jCSV, please feel free to write me an email: skironnet (at) gmail (dot) com
