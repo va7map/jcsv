@@ -60,7 +60,7 @@ public class ValueProcessorProvider {
 	 * @param clazz the class that the processor should convert
 	 * @param processor the processor
 	 */
-	public static <E> void registerValueProcessor(Class<E> clazz, ValueProcessor<E> processor) {
+	public static <E> void registerValueProcessor(Class<E> clazz, ValueProcessor<? extends E> processor) {
 		if (clazz.isPrimitive()) {
 			throw new IllegalArgumentException(
 					"can not register value processor for a primitive type, register it for the wrapper type instead");
