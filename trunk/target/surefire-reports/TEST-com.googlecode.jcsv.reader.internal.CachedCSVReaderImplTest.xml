@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.042" errors="0" skipped="0" tests="12" name="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest">
+<testsuite failures="0" time="0.043" errors="0" skipped="0" tests="12" name="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-openjdk/jre/lib/amd64"/>
@@ -41,7 +41,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-openjdk/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="de"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -60,14 +60,14 @@
   </properties>
   <testcase time="0.003" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testSet"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testHasNext"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testNext"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testListBounds"/>
+  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testNext"/>
+  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testListBounds"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testHasPrevious"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testPrevious"/>
+  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testPrevious"/>
   <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testNextIndex"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testPreviousIndex"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testGet"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testGetFails"/>
+  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testGetFails"/>
   <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testRemove"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testAdd"/>
+  <testcase time="0" classname="com.googlecode.jcsv.reader.internal.CachedCSVReaderImplTest" name="testAdd"/>
 </testsuite>
