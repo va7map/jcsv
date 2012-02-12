@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.008" errors="0" skipped="0" tests="16" name="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest">
+<testsuite failures="0" time="0.004" errors="0" skipped="0" tests="16" name="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-openjdk/jre/lib/amd64"/>
@@ -41,7 +41,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-6-openjdk/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher deploy"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="de"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -71,7 +71,7 @@
   <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testFailIntegerProcessor"/>
   <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testLongProcessor"/>
   <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testFailLongProcessor"/>
-  <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testShortProcessor"/>
+  <testcase time="0.001" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testShortProcessor"/>
   <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testFailShortProcessor"/>
-  <testcase time="0.001" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testStringProcessor"/>
+  <testcase time="0" classname="com.googlecode.jcsv.annotations.processors.ValueProcessorsTest" name="testStringProcessor"/>
 </testsuite>
