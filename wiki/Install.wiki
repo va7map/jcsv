@@ -7,9 +7,7 @@ The latest stable version is 1.0.1 and can be downloaded in the [http://code.goo
 
 If you want to use some of the new features, you can use the SNAPSHOT version. It will do its work, but the API may change until it becomes stable.
 
-Download (stable): [http://code.google.com/p/jcsv/downloads/detail?name=jcsv-1.2.0.jar&can=2&q= jcsv-1.2.0.jar]
-
-Download (SNAPSHOT): [http://jcsv.googlecode.com/svn/trunk/target/jcsv-1.2.1-SNAPSHOT.jar jcsv-1.2.1-SNAPSHOT.jar] 
+Download (stable): [http://code.google.com/p/jcsv/downloads/detail?name=jcsv-1.3.3.jar&can=2&q= jcsv-1.3.3.jar]
 
 === Maven Repository ===
 jCSV is available in the Maven repository:
@@ -17,7 +15,6 @@ jCSV is available in the Maven repository:
 <dependency>
 	<groupId>com.googlecode.jcsv</groupId>
 	<artifactId>jcsv</artifactId>
-	<version>1.2.0</version>
+	<version>1.3.3</version>
 </dependency>
 }}}
-The SNAPSHOT version is available, too.
