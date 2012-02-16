@@ -3,6 +3,9 @@
 === General ===
   * Wiki, more examples, better structure
 
+=== Version 1.4.0 ===
+  * Minor API changes, ValueProcessProvider will no longer be static
+
 === Version 2.0.0 ===
   * Code refactoring
   * Performance improvements
