@@ -2,7 +2,7 @@ package com.googlecode.jcsv.annotations.internal;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.googlecode.jcsv.annotations.ValueProcessor;
@@ -10,46 +10,46 @@ import com.googlecode.jcsv.annotations.processors.IntegerProcessor;
 import com.googlecode.jcsv.annotations.processors.StringProcessor;
 
 public class ValueProcessorProviderTest {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		// remove some value processors to test register method
-		ValueProcessorProvider.removeValueProcessor(String.class);
-		ValueProcessorProvider.removeValueProcessor(Integer.class);
-		ValueProcessorProvider.removeValueProcessor(Float.class);
+	
+	private ValueProcessorProvider provider;
+	
+	@Before
+	public void setUp() {
+		provider = new ValueProcessorProvider();
+		provider.removeValueProcessor(Integer.class);
 	}
-
+	
 	@Test
 	public void testRegisterAndGetValueProcessor() {
-		// add a simple Processor
 		ValueProcessor<Integer> integerProcessor = new IntegerProcessor();
-		ValueProcessorProvider.registerValueProcessor(Integer.class, integerProcessor);
+		provider.registerValueProcessor(Integer.class, integerProcessor);
 		
-		assertEquals(integerProcessor, ValueProcessorProvider.getValueProcessor(Integer.class));
-		assertEquals(integerProcessor, ValueProcessorProvider.getValueProcessor(int.class));
+		assertEquals(integerProcessor, provider.getValueProcessor(Integer.class));
+		assertEquals(integerProcessor, provider.getValueProcessor(int.class));
 		
 		// add a processor for a sub class of type E
 		ValueProcessor<String> stringProcessor = new StringProcessor();
-		ValueProcessorProvider.registerValueProcessor(CharSequence.class, stringProcessor);
+		provider.registerValueProcessor(CharSequence.class, stringProcessor);
 		
-		assertEquals(stringProcessor, ValueProcessorProvider.getValueProcessor(CharSequence.class));
+		assertEquals(stringProcessor, provider.getValueProcessor(CharSequence.class));
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void testFailRegisterValueProcessor() {
 		ValueProcessor<Integer> integerProcessor = new IntegerProcessor();
-		ValueProcessorProvider.registerValueProcessor(Integer.class, integerProcessor);
-		ValueProcessorProvider.registerValueProcessor(Integer.class, integerProcessor);
+		
+		provider.registerValueProcessor(Integer.class, integerProcessor);
+		provider.registerValueProcessor(Integer.class, integerProcessor);
 	}
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testRemoveValueProcessor() {
 		ValueProcessor<Integer> integerProcessor = new IntegerProcessor();
-		ValueProcessorProvider.registerValueProcessor(Integer.class, integerProcessor);
+		provider.registerValueProcessor(Integer.class, integerProcessor);
 		
-		assertEquals(integerProcessor, ValueProcessorProvider.getValueProcessor(Integer.class));
+		assertEquals(integerProcessor, provider.getValueProcessor(Integer.class));
 		
-		ValueProcessorProvider.removeValueProcessor(Integer.class);
-		ValueProcessorProvider.getValueProcessor(Integer.class);
+		provider.removeValueProcessor(Integer.class);
+		provider.getValueProcessor(Integer.class);
 	}
 }

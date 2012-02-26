@@ -27,31 +27,13 @@ import com.googlecode.jcsv.annotations.processors.StringProcessor;
  */
 public class ValueProcessorProvider {
 
-	private static Map<Class<?>, ValueProcessor<?>> processors = new HashMap<Class<?>, ValueProcessor<?>>();
+	private final Map<Class<?>, ValueProcessor<?>> processors = new HashMap<Class<?>, ValueProcessor<?>>();
 
-	private static Map<Class<?>, Class<?>> primitiveWrapperTypeMap = new HashMap<Class<?>, Class<?>>();
+	private final Map<Class<?>, Class<?>> primitiveWrapperTypes = new HashMap<Class<?>, Class<?>>();
 
-	static {
-		// fill the primitive types map
-		primitiveWrapperTypeMap.put(boolean.class, Boolean.class);
-		primitiveWrapperTypeMap.put(byte.class, Byte.class);
-		primitiveWrapperTypeMap.put(char.class, Character.class);
-		primitiveWrapperTypeMap.put(double.class, Double.class);
-		primitiveWrapperTypeMap.put(float.class, Float.class);
-		primitiveWrapperTypeMap.put(int.class, Integer.class);
-		primitiveWrapperTypeMap.put(long.class, Long.class);
-		primitiveWrapperTypeMap.put(short.class, Short.class);
-
-		// register the default value processors
-		registerValueProcessor(String.class, new StringProcessor());
-		registerValueProcessor(Boolean.class, new BooleanProcessor());
-		registerValueProcessor(Byte.class, new ByteProcessor());
-		registerValueProcessor(Character.class, new CharacterProcessor());
-		registerValueProcessor(Double.class, new DoubleProcessor());
-		registerValueProcessor(Float.class, new FloatProcessor());
-		registerValueProcessor(Integer.class, new IntegerProcessor());
-		registerValueProcessor(Long.class, new LongProcessor());
-		registerValueProcessor(Short.class, new ShortProcessor());
+	public ValueProcessorProvider() {
+		fillPrimitiveWrapperTypesMap();
+		registerDefaultValueProcessors();
 	}
 
 	/**
@@ -60,7 +42,7 @@ public class ValueProcessorProvider {
 	 * @param clazz the class that the processor should convert
 	 * @param processor the processor
 	 */
-	public static <E> void registerValueProcessor(Class<E> clazz, ValueProcessor<? extends E> processor) {
+	public <E> void registerValueProcessor(Class<E> clazz, ValueProcessor<? extends E> processor) {
 		if (clazz.isPrimitive()) {
 			throw new IllegalArgumentException(
 					"can not register value processor for a primitive type, register it for the wrapper type instead");
@@ -80,7 +62,7 @@ public class ValueProcessorProvider {
 	 *
 	 * @param clazz the class
 	 */
-	public static <E> void removeValueProcessor(Class<E> clazz) {
+	public <E> void removeValueProcessor(Class<E> clazz) {
 		if (!processors.containsKey(clazz)) {
 			throw new IllegalArgumentException(String.format(
 					"can not remove value processor for %s, it is not registered yet.", clazz));
@@ -96,10 +78,10 @@ public class ValueProcessorProvider {
 	 * @return the appropriate value processor
 	 */
 	@SuppressWarnings("unchecked")
-	public static <E> ValueProcessor<E> getValueProcessor(Class<E> clazz) {
+	public <E> ValueProcessor<E> getValueProcessor(Class<E> clazz) {
 		if (clazz.isPrimitive()) {
 			// this cast is safe
-			clazz = (Class<E>) primitiveWrapperTypeMap.get(clazz);
+			clazz = (Class<E>) primitiveWrapperTypes.get(clazz);
 		}
 
 		if (!processors.containsKey(clazz)) {
@@ -109,4 +91,27 @@ public class ValueProcessorProvider {
 		// this cast is safe due to the registerValueProcessor method
 		return ((ValueProcessor<E>) processors.get(clazz));
 	}
+	
+	private void registerDefaultValueProcessors() {
+		registerValueProcessor(String.class, new StringProcessor());
+		registerValueProcessor(Boolean.class, new BooleanProcessor());
+		registerValueProcessor(Byte.class, new ByteProcessor());
+		registerValueProcessor(Character.class, new CharacterProcessor());
+		registerValueProcessor(Double.class, new DoubleProcessor());
+		registerValueProcessor(Float.class, new FloatProcessor());
+		registerValueProcessor(Integer.class, new IntegerProcessor());
+		registerValueProcessor(Long.class, new LongProcessor());
+		registerValueProcessor(Short.class, new ShortProcessor());
+	}
+	
+	private void fillPrimitiveWrapperTypesMap() {
+		primitiveWrapperTypes.put(boolean.class, Boolean.class);
+		primitiveWrapperTypes.put(byte.class, Byte.class);
+		primitiveWrapperTypes.put(char.class, Character.class);
+		primitiveWrapperTypes.put(double.class, Double.class);
+		primitiveWrapperTypes.put(float.class, Float.class);
+		primitiveWrapperTypes.put(int.class, Integer.class);
+		primitiveWrapperTypes.put(long.class, Long.class);
+		primitiveWrapperTypes.put(short.class, Short.class);		
+	}	
 }
