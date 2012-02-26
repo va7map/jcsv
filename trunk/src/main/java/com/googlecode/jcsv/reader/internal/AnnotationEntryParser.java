@@ -18,6 +18,8 @@ import com.googlecode.jcsv.reader.CSVEntryParser;
 public class AnnotationEntryParser<E> implements CSVEntryParser<E> {
 
 	private final Class<E> clazz;
+	
+	private final ValueProcessorProvider provider;
 
 	/**
 	 * Constructs a AnnotationEntryParser for type E.
@@ -25,8 +27,9 @@ public class AnnotationEntryParser<E> implements CSVEntryParser<E> {
 	 * @param clazz
 	 *            the annotated class, and the class of the csv entries
 	 */
-	public AnnotationEntryParser(Class<E> clazz) {
+	public AnnotationEntryParser(Class<E> clazz, ValueProcessorProvider provider) {
 		this.clazz = clazz;
+		this.provider = provider;
 	}
 
 	/**
@@ -94,7 +97,7 @@ public class AnnotationEntryParser<E> implements CSVEntryParser<E> {
 				}
 
 				// load the appropriate value processor
-				ValueProcessor<?> vp = ValueProcessorProvider.getValueProcessor(type);
+				ValueProcessor<?> vp = provider.getValueProcessor(type);
 
 				// use the value processor to convert the string data
 				Object value = vp.processValue(data[column]);

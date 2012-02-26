@@ -5,13 +5,15 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.googlecode.jcsv.annotations.MapToColumn;
+import com.googlecode.jcsv.annotations.internal.ValueProcessorProvider;
 import com.googlecode.jcsv.reader.CSVEntryParser;
 
 public class AnnotationEntryParserTest {
 	
 	@Test
 	public void testParseEntry() {
-		CSVEntryParser<Person> entryParser = new AnnotationEntryParser<Person>(Person.class);
+		ValueProcessorProvider provider = new ValueProcessorProvider();
+		CSVEntryParser<Person> entryParser = new AnnotationEntryParser<Person>(Person.class, provider);
 		
 		Person expected = new Person("Hans", "im Glück", 18);
 		String[] data = {"Hans", "im Glück", "18"};
