@@ -1,5 +1,7 @@
 package com.googlecode.jcsv.annotations.internal;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +9,7 @@ import com.googlecode.jcsv.annotations.ValueProcessor;
 import com.googlecode.jcsv.annotations.processors.BooleanProcessor;
 import com.googlecode.jcsv.annotations.processors.ByteProcessor;
 import com.googlecode.jcsv.annotations.processors.CharacterProcessor;
+import com.googlecode.jcsv.annotations.processors.DateProcessor;
 import com.googlecode.jcsv.annotations.processors.DoubleProcessor;
 import com.googlecode.jcsv.annotations.processors.FloatProcessor;
 import com.googlecode.jcsv.annotations.processors.IntegerProcessor;
@@ -102,6 +105,7 @@ public class ValueProcessorProvider {
 		registerValueProcessor(Integer.class, new IntegerProcessor());
 		registerValueProcessor(Long.class, new LongProcessor());
 		registerValueProcessor(Short.class, new ShortProcessor());
+		registerValueProcessor(Date.class, new DateProcessor(DateFormat.getDateInstance()));
 	}
 	
 	private void fillPrimitiveWrapperTypesMap() {
