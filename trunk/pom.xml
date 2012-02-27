@@ -9,7 +9,7 @@
 
 	<groupId>com.googlecode.jcsv</groupId>
 	<artifactId>jcsv</artifactId>
-	<version>1.4.0</version>
+	<version>1.4.1-SNAPSHOT</version>
 	<name>jCSV</name>
 	<packaging>jar</packaging>
 
@@ -23,9 +23,9 @@
 	</licenses>
 
 	<scm>
-		<url>http://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</url>
-		<connection>scm:svn:http://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</connection>
-		<developerConnection>scm:svn:https://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</developerConnection>
+		<url>http://jcsv.googlecode.com/svn/trunk/</url>
+		<connection>scm:svn:http://jcsv.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://jcsv.googlecode.com/svn/trunk/</developerConnection>
 	</scm>
 
 	<developers>
