@@ -113,7 +113,8 @@ This code should be self explaining if you look at csv file above. You now have 
 {{{
 Reader reader = new FileReader("persons.csv");
 
-CSVEntryParser<Person> entryParser = new AnnotationEntryParser<Person>(Person.class);
+ValueProcessorProvider provider = new ValueProcessorProvider();
+CSVEntryParser<Person> entryParser = new AnnotationEntryParser<Person>(Person.class, provider);
 CSVReader<Person> csvPersonReader = new CSVReaderBuilder<Person>(reader).entryParser(entryParser).build();
 
 List<Person> persons = csvPersonReader.readAll();
@@ -126,7 +127,7 @@ jCSV uses reflection to set the values, so there are a few drawbacks if you choo
   * There has to be an accessible default constructor
 
 === Value processors ===
-jCSV uses value processors to convert the String data to the needed type. As you can see in the example above, the third column is mapped to an int property. jCSV now uses the IntegerProcessor to convert the String into an Integer. There are several default value processors, such as primitives (and its wrapper types) and a StringProcessor.
+jCSV uses value processors to convert the String data to the needed type. As you can see in the example above, the third column is mapped to an int property. jCSV now uses the IntegerProcessor to convert the String into an Integer. There are several default value processors, such as primitives (and its wrapper types), a StringProcessor and a DateProcessor that uses the default SimpleDateFormat.
 
 If these value processors are not enough, you can simply add your own value processors. Consider you have a column that holds an address and should be converted to an Address object. The value processor for this type might look look this:
 {{{
@@ -143,7 +144,7 @@ To publish this value processor, simply call:
 ValueProcessorProvider.registerValueProcessor(Address.class, new AddressProcessor());
 }}}
 
-However, in the most cases, you do not have to provide your own ValueProcessor. The default implementations of the primitives, it's wrapper classes and String should be enough.
+However, in the most cases, you do not have to provide your own ValueProcessor. The default implementations of the primitives, it's wrapper classes, String and Date should be enough.
 
 = Read the entries =
 After configuring the CSVReader, you can access the data. As you may have seen above, one apprach is to read the whole data into a List. This can be done, calling the readAll() method.
