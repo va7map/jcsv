@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -10,7 +9,7 @@
 
 	<groupId>com.googlecode.jcsv</groupId>
 	<artifactId>jcsv</artifactId>
-	<version>1.4.0-SNAPSHOT</version>
+	<version>1.4.0</version>
 	<name>jCSV</name>
 	<packaging>jar</packaging>
 
@@ -24,9 +23,9 @@
 	</licenses>
 
 	<scm>
-		<url>http://jcsv.googlecode.com/svn/trunk/</url>
-		<connection>scm:svn:http://jcsv.googlecode.com/svn/trunk/</connection>
-		<developerConnection>scm:svn:https://jcsv.googlecode.com/svn/trunk/</developerConnection>
+		<url>http://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</url>
+		<connection>scm:svn:http://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</connection>
+		<developerConnection>scm:svn:https://jcsv.googlecode.com/svn/tags/jcsv-1.4.0</developerConnection>
 	</scm>
 
 	<developers>
