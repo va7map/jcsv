@@ -1,9 +1,16 @@
   * [Welcome Welcome]
   * [Install Install jCSV]
-  * Examples
-    * [CSVReader Read a CSV file]
-    * [CSVWriter Write a CSV file]
+  * How to use
+    * [CSVReader The CSVReader]
+    * [CSVWriter The CSVWriter]
     * [CSVEntryFilter The CSVEntryFilter]
     * [CSVStrategy Specify the csv format]
-    * [CachedReader Cached Reader]
+    * [CachedReader The Cached Reader]
+  * Examples
+    * [CSVEntryParserExample Read a csv file (with a CSVEntryParser)]
+    * [AnnotationEntryParserExample Read a csv file (with annotations)]
+    * [CSVEntryFilterExample Filter some entries]
+    * [CachedReaderExample Use a cached reader]
+    * [ValueProcessorExample Provide your own ValueProcessor]
+    * [CSVWriterExample Write a csv file]
   * [Roadmap Roadmap]
