@@ -3,9 +3,6 @@
 === General ===
   * Wiki, more examples, better structure
 
-=== Version 1.4.0 ===
-  * _released_
-
 === Version 2.0.0 ===
   * Code refactoring
   * Performance improvements
