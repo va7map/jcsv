@@ -35,7 +35,8 @@ Now you can build a CSVReader that uses your annotated class.
 Reader csvFile = new InputStreamReader(Main.class.getResourceAsStream("/persons.csv"));
 
 ValueProcessorProvider vpp = new ValueProcessorProvider();
-CSVReader<Person> personReader = new CSVReaderBuilder<Person>(csvFile).entryParser(new AnnotationEntryParser<Person>(Person.class, vpp)).build();
+CSVReader<Person> personReader = new CSVReaderBuilder<Person>(csvFile).entryParser(
+		new AnnotationEntryParser<Person>(Person.class, vpp)).build();
 List<Person> persons = personReader.readAll();
 }}}
 That's it. :)
