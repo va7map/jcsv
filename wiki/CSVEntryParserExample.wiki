@@ -30,7 +30,7 @@ public class Person {
 	
   @Override
   public String toString() {
-    return String.format("%s %s %s years");
+    return String.format("%s %s %s years", firstname, lastname, age);
   }
 }
 }}}
