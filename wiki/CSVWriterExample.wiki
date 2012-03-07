@@ -13,7 +13,7 @@ persons.add(new Person("Lisa", "Stein", 19));
 
 You can write this data to a csv file using a CSVWriter.
 
-=== The PersonEntryConverter ===
+= The PersonEntryConverter =
 The CSVEntryConverter for our Person class could look like this:
 {{{
 public class PersonEntryConverter implements CSVEntryConverter<Person> {
