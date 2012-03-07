@@ -1,0 +1,51 @@
+#summary A simple examples how to write a csv file, using the CSVWriter.
+
+= Introduction =
+Consider we would like to create a `persons.csv` file like the one from the reader examples.
+
+In our application, we have a list of persons:
+{{{
+List<Person> persons = new ArrayList<Person>();
+persons.add(new Person("Holger", "Schmidt", 35));
+persons.add(new Person("Max", "Mustermann", 17));
+persons.add(new Person("Lisa", "Stein", 19));
+}}}
+
+You can write this data to a csv file using a CSVWriter.
+
+=== The CSVEntryVon ===
+The CSVEntryConverter for our Person class could look like this:
+{{{
+public class PersonEntryConverter implements CSVEntryConverter<Person> {
+	@Override
+	public String[] convertEntry(Person p) {
+		String[] columns = new String[3];
+
+		columns[0] = p.getFirstName();
+		columns[1] = p.getLastName();
+		columns[2] = String.valueOf(p.getAge());
+
+		return columns;
+	}
+}
+}}}
+
+= Wire it all together =
+We can now build the CSVWriter instance and provide our entry converter implementation.
+{{{
+Writer out = new FileWriter("persons.csv");
+
+CSVWriter<Person> csvWriter = new CSVWriterBuilder<Person>(out).entryConverter(new PersonEntryConverter()).build();
+csvWriter.writeAll(persons);
+}}}
+
+= Default implementation =
+jCSV comes with a default implementation of the CSVEntryConverter, that processes String[] arrays. This implementation may come in handy if you read the data using the default CSVReader.
+{{{
+public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
+	@Override
+	public String[] convertEntry(String[] data) {
+		return data;
+	}
+}
+}}}
