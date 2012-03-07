@@ -13,20 +13,20 @@ persons.add(new Person("Lisa", "Stein", 19));
 
 You can write this data to a csv file using a CSVWriter.
 
-=== The CSVEntryVon ===
+=== The PersonEntryConverter ===
 The CSVEntryConverter for our Person class could look like this:
 {{{
 public class PersonEntryConverter implements CSVEntryConverter<Person> {
-	@Override
-	public String[] convertEntry(Person p) {
-		String[] columns = new String[3];
+  @Override
+  public String[] convertEntry(Person p) {
+    String[] columns = new String[3];
 
-		columns[0] = p.getFirstName();
-		columns[1] = p.getLastName();
-		columns[2] = String.valueOf(p.getAge());
+    columns[0] = p.getFirstName();
+    columns[1] = p.getLastName();
+    columns[2] = String.valueOf(p.getAge());
 
-		return columns;
-	}
+    return columns;
+  }
 }
 }}}
 
@@ -43,9 +43,9 @@ csvWriter.writeAll(persons);
 jCSV comes with a default implementation of the CSVEntryConverter, that processes String[] arrays. This implementation may come in handy if you read the data using the default CSVReader.
 {{{
 public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
-	@Override
-	public String[] convertEntry(String[] data) {
-		return data;
-	}
+  @Override
+  public String[] convertEntry(String[] data) {
+    return data;
+  }
 }
 }}}
