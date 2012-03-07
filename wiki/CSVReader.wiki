@@ -42,21 +42,6 @@ You see, it's quite easy to read a CSV file and use the data in your program.
 
 But it would be a lot easier to use a List of Person objects in your program. jCSV can achieve this for you, it can convert each row into a java object.
 
-The corrensponding (immutable) Person class may look like this:
-{{{
-public class Person {
-        // ... private variable declarations
-
-	public Person(String firstname, String lastname, int age) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.age = age;
-	}
-       
-        // ... getter, equals, toString
-}
-}}}
-
 All we have to do is to tell jCSV how to convert a row from the csv file into a Person object. For this purpose exists an interface called CSVEntryParser:
 {{{
 public interface CSVEntryParser<E> {
@@ -109,7 +94,7 @@ public class Person {
 	// getter, equals, toString, ...
 }
 }}}
-This code should be self explaining if you look at csv file above. You now have to provide this information to jCSV via the AnnotationEntryParser:
+This code should be self explaining if you look at the csv file above. You now have to provide this information to jCSV via the AnnotationEntryParser:
 {{{
 Reader reader = new FileReader("persons.csv");
 
@@ -141,7 +126,8 @@ public class AddressProcessor implements ValueProcessor<Address> {
 }}}
 To publish this value processor, simply call:
 {{{
-ValueProcessorProvider.registerValueProcessor(Address.class, new AddressProcessor());
+ValueProcessorProvider vpp = new ValueProcessorProvider();
+vpp.registerValueProcessor(Address.class, new AddressProcessor());
 }}}
 
 However, in the most cases, you do not have to provide your own ValueProcessor. The default implementations of the primitives, it's wrapper classes, String and Date should be enough.
