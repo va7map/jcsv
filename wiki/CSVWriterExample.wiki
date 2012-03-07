@@ -38,14 +38,3 @@ Writer out = new FileWriter("persons.csv");
 CSVWriter<Person> csvWriter = new CSVWriterBuilder<Person>(out).entryConverter(new PersonEntryConverter()).build();
 csvWriter.writeAll(persons);
 }}}
-
-= Default implementation =
-jCSV comes with a default implementation of the CSVEntryConverter, that processes String[] arrays. This implementation may come in handy if you read the data using the default CSVReader.
-{{{
-public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
-  @Override
-  public String[] convertEntry(String[] data) {
-    return data;
-  }
-}
-}}}
