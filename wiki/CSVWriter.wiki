@@ -26,7 +26,7 @@ public class DefaultCSVEntryConverter implements CSVEntryConverter<String[]> {
 }}}
 
 
-=== Incremental writing ===
+= Incremental writing =
 If you want to write a very large csv file and can not hold all your object instances in memory, you can write each entry separately using the `CSVWriter#write(E e)` method.
 {{{
 for (int i = 0; i < ONE_MILLION; i++) {
@@ -35,3 +35,6 @@ for (int i = 0; i < ONE_MILLION; i++) {
   csvWriter.flush();
 }
 }}}
+
+= Examples =
+  * [CSVWriterExample Write a csv file]
