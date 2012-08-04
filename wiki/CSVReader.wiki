@@ -157,5 +157,5 @@ for (Person p : csvPersonReader) {
 }}}
 
 = Examples =
-* [CSVEntryParserExample Read a csv file (with a CSVEntryParser)]
-* [AnnotationEntryParserExample Read a csv file (with annotations)]
+  * [CSVEntryParserExample Read a csv file (with a CSVEntryParser)]
+  * [AnnotationEntryParserExample Read a csv file (with annotations)]
