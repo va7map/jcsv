@@ -135,7 +135,7 @@ However, in the most cases, you do not have to provide your own ValueProcessor. 
 = Read the entries =
 After configuring the CSVReader, you can access the data. As you may have seen above, one apprach is to read the whole data into a List. This can be done, calling the readAll() method.
 {{{
-List<Person> persons = csvReader.reasAll();
+List<Person> persons = csvReader.readAll();
 }}}
 
 If you have a large csv file, you possibly can not read the whole csv file into your memory. Therefore, there is the possbility to incrementaly read the records of the file.
