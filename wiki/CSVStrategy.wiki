@@ -3,7 +3,7 @@
 = The CSVStrategy =
 You can specify your own csv format by passing a CSVStrategy object to the CSVReader:
 {{{
-new CSVReader.Builder<MyClass>.(csvFileReader).strategy(myStrategy)...;
+new CSVReaderBuilder<MyClass>.(csvFileReader).strategy(myStrategy)...;
 }}}
 
 The CSVStrategy specifies the format of the csv file and the behaviour of the CSVReader. There are various parameters that can be configured:
